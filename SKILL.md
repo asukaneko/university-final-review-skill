@@ -1,11 +1,11 @@
 ---
 name: university-final-review
-description: Generate comprehensive university final-exam review materials from PPT slides, lecture notes, assignments, syllabi, screenshots, or past papers. Use this skill when the user asks for final review notes, exam-point prediction, question banks, memorization outlines, mock exams, or step-by-step calculation/algorithm problem coaching.
+description: Generate comprehensive, cross-disciplinary university final-exam review materials from PPT slides, lecture notes, assignments, syllabi, screenshots, lab materials, case materials, or past papers. Use this skill when the user asks for final review notes, exam-point prediction, question banks, memorization outlines, mock exams, discipline-specific review plans, or step-by-step problem/case/clinical/proof coaching.
 ---
 
 # University Final Review Skill
 
-This skill turns university course materials into structured final-exam review resources.
+This skill turns university course materials from different disciplines into structured final-exam review resources.
 
 Use this skill when the user wants to:
 
@@ -15,18 +15,40 @@ Use this skill when the user wants to:
 - Predict likely exam points.
 - Generate practice questions and mock exams.
 - Create memorization outlines.
-- Explain calculation, scheduling, algorithm, database, or network problems step by step.
+- Explain discipline-specific problem solving, such as calculation, proof, experiment analysis, case analysis, legal issue spotting, clinical reasoning, design critique, or essay planning.
+
+## Supported discipline categories
+
+Use the most relevant category guide when generating the review package:
+
+- Computer Science / Engineering: `docs/en/categories/stem-engineering.md`, `docs/zh-CN/categories/stem-engineering.md`
+- Natural Sciences / Mathematics: `docs/en/categories/natural-sciences.md`, `docs/zh-CN/categories/natural-sciences.md`
+- Medicine / Health: `docs/en/categories/medicine-health.md`, `docs/zh-CN/categories/medicine-health.md`
+- Law: `docs/en/categories/law.md`, `docs/zh-CN/categories/law.md`
+- Humanities: `docs/en/categories/humanities.md`, `docs/zh-CN/categories/humanities.md`
+- Social Sciences: `docs/en/categories/social-sciences.md`, `docs/zh-CN/categories/social-sciences.md`
+- Business / Economics: `docs/en/categories/business-economics.md`, `docs/zh-CN/categories/business-economics.md`
+- Education / Arts / Design: `docs/en/categories/education-arts.md`, `docs/zh-CN/categories/education-arts.md`
 
 ## Core workflow
 
-1. Identify the course, chapters, exam scope, and available materials.
-2. Extract the chapter structure and major concepts from the user-provided files.
-3. Generate deep lecture notes for each chapter.
-4. Identify high-priority exam points and likely question types.
-5. Generate a chapter-based question bank with answers and explanations.
-6. Produce memorization outlines and last-minute checklists.
-7. For technical courses, provide formulas, derivations, pseudocode, C++ examples, or hand-calculation steps when relevant.
-8. Generate a complete mock exam if requested.
+1. Identify the course, chapters, discipline category, exam scope, and available materials.
+2. Select the relevant discipline-specific review pattern.
+3. Extract the chapter structure and major concepts from the user-provided files.
+4. Generate deep lecture notes for each chapter.
+5. Identify high-priority exam points and likely question types.
+6. Generate a chapter-based question bank with answers and explanations.
+7. Produce memorization outlines and last-minute checklists.
+8. Provide discipline-specific worked examples where relevant:
+   - calculation, proof, derivation, or coding for STEM courses;
+   - experiment interpretation for natural sciences;
+   - clinical reasoning and safety cautions for medical courses;
+   - issue-rule-application-conclusion analysis for law;
+   - thesis-evidence-analysis writing for humanities;
+   - theory-method-case analysis for social sciences;
+   - model-financial-case analysis for business and economics;
+   - lesson-plan, critique, or portfolio review for education, arts, and design.
+9. Generate a complete mock exam if requested.
 
 ## Documentation
 
@@ -37,6 +59,7 @@ Chinese documentation is in `docs/zh-CN/`.
 Recommended references:
 
 - `docs/en/overall-workflow.md`
+- `docs/en/categories/README.md`
 - `docs/en/deep-lecture-notes.md`
 - `docs/en/exam-point-predictor.md`
 - `docs/en/question-bank-generator.md`
@@ -44,6 +67,7 @@ Recommended references:
 - `docs/en/calculation-algorithm-coach.md`
 - `docs/en/output-format.md`
 - `docs/zh-CN/overall-workflow.md`
+- `docs/zh-CN/categories/README.md`
 - `docs/zh-CN/deep-lecture-notes.md`
 - `docs/zh-CN/exam-point-predictor.md`
 - `docs/zh-CN/question-bank-generator.md`
@@ -55,8 +79,10 @@ Recommended references:
 
 - Stay grounded in the uploaded materials.
 - Do not produce vague summaries when the user asks for exam review.
-- Make the output directly useful for studying, memorizing, and solving questions.
-- Use clear sectioning, tables, worked examples, and scoring rubrics when useful.
+- Choose an output structure that fits the discipline.
+- Make the output directly useful for studying, memorizing, analyzing, and solving questions.
+- Use clear sectioning, tables, worked examples, concept maps, timelines, case templates, and scoring rubrics when useful.
+- For medical, legal, financial, or other high-stakes subjects, frame outputs as study support, not professional advice.
 - For Chinese users, produce exam-oriented Chinese explanations unless the user requests English.
 - For English users, produce polished English study notes unless the user requests Chinese.
 
@@ -65,10 +91,11 @@ Recommended references:
 When the user asks for a complete review package, include:
 
 1. Course overview
-2. Chapter-by-chapter deep notes
-3. Exam point prediction
-4. Question bank
-5. Memorization outline
-6. Calculation / algorithm coaching where applicable
-7. Final sprint checklist
-8. 100-point mock exam with answer key and scoring rubric
+2. Discipline category and review strategy
+3. Chapter-by-chapter deep notes
+4. Exam point prediction
+5. Question bank
+6. Memorization outline
+7. Discipline-specific worked examples where applicable
+8. Final sprint checklist
+9. 100-point mock exam with answer key and scoring rubric
