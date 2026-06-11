@@ -227,16 +227,22 @@ def build_html(cards: list[dict[str, str]], title: str, language: str) -> str:
     .pill {{ border-radius: 999px; background: rgba(37,99,235,.10); color: #1d4ed8; padding: 7px 10px; font-size: 12px; font-weight: 800; }}
     .pill.green {{ background: rgba(15,118,110,.10); color: #0f766e; }}
     .pill.orange {{ background: rgba(245,158,11,.13); color: #b45309; }}
-    .flip-card {{ min-height: 270px; perspective: 1200px; margin-bottom: 16px; }}
-    .flip-inner {{ position: relative; min-height: 270px; transition: transform .46s cubic-bezier(.2,.8,.2,1); transform-style: preserve-3d; }}
+    .flip-card {{ min-height: 330px; perspective: 1400px; margin-bottom: 16px; cursor: pointer; }}
+    .flip-inner {{
+      position: relative; min-height: 330px; transition: transform .62s cubic-bezier(.2,.75,.2,1.08), filter .25s ease;
+      transform-style: preserve-3d; will-change: transform;
+    }}
+    .flip-card:hover .flip-inner {{ filter: drop-shadow(0 18px 28px rgba(37,99,235,.12)); }}
     .flip-card.revealed .flip-inner {{ transform: rotateY(180deg); }}
     .face {{
-      position: absolute; inset: 0; border-radius: 24px; padding: 26px; background: linear-gradient(180deg, #fff, #f8fbff);
-      border: 1px solid rgba(37,99,235,.16); backface-visibility: hidden; display:flex; flex-direction: column; justify-content: center;
+      position: absolute; inset: 0; border-radius: 24px; padding: 30px; background: linear-gradient(180deg, #fff, #f8fbff);
+      border: 1px solid rgba(37,99,235,.16); backface-visibility: hidden; -webkit-backface-visibility: hidden;
+      display:flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; overflow: auto;
     }}
+    .face.front {{ box-shadow: inset 0 1px 0 rgba(255,255,255,.9); }}
     .face.back {{ transform: rotateY(180deg); background: linear-gradient(180deg, #f7fffc, #fff); }}
-    .face-label {{ color: var(--muted); font-size: 13px; font-weight: 800; text-transform: uppercase; letter-spacing: .08em; margin-bottom: 12px; }}
-    .content {{ font-size: clamp(18px, 2.2vw, 26px); line-height: 1.55; white-space: pre-wrap; }}
+    .face-label {{ color: var(--muted); font-size: 13px; font-weight: 800; text-transform: uppercase; letter-spacing: .08em; margin-bottom: 14px; }}
+    .content {{ max-width: 760px; margin: 0 auto; font-size: clamp(18px, 2.2vw, 26px); line-height: 1.6; white-space: pre-wrap; text-wrap: pretty; }}
     .review-buttons {{ display:grid; grid-template-columns: repeat(4, 1fr); gap: 10px; margin: 14px 0; }}
     .nav {{ display:flex; justify-content: space-between; gap: 10px; margin-top: 14px; }}
     .progressbar {{ height: 10px; background: rgba(99,112,131,.18); border-radius: 999px; overflow:hidden; margin-top: 12px; }}
@@ -421,6 +427,11 @@ function grade(score) {{
   const card = filtered[index];
   progress[card.ID] = {{reviews: (progress[card.ID]?.reviews || 0) + 1, score, lastReviewed: new Date().toISOString()}};
   save();
+  if (score === 1) {{
+    revealed = true;
+    render();
+    return;
+  }}
   move(1);
 }}
 
@@ -439,7 +450,7 @@ function resetFilters() {{
 function exportProgress() {{
   const rows = [['ID','Reviews','Score','LastReviewed']];
   CARDS.forEach(c => {{ const p = progress[c.ID] || {{}}; rows.push([c.ID, p.reviews || 0, p.score || 0, p.lastReviewed || '']); }});
-  const csv = rows.map(r => r.map(v => '"' + String(v).replaceAll('"','""') + '"').join(',')).join('\n');
+  const csv = rows.map(r => r.map(v => '"' + String(v).replaceAll('"','""') + '"').join(',')).join('\\n');
   const blob = new Blob([csv], {{type:'text/csv;charset=utf-8'}});
   const a = document.createElement('a');
   a.href = URL.createObjectURL(blob); a.download = 'test-card-progress.csv'; a.click(); URL.revokeObjectURL(a.href);

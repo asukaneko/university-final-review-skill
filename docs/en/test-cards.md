@@ -191,7 +191,7 @@ The script also supports common aliases, including lowercase headers and Chinese
 - Search front, back, topic, and tags.
 - Filter by chapter, difficulty, and card type.
 - Flip cards to reveal answers.
-- Use `1/2/3/4` to mark Again / Hard / Good / Easy.
+- Use `1/2/3/4` to mark Again / Hard / Good / Easy; choosing Again stays on the current card and flips to the answer side for immediate review.
 - Track reviews, mastery score, and last-reviewed time.
 - Weak-card-only review mode.
 - Shuffle mode.
