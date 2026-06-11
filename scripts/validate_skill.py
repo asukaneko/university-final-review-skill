@@ -17,6 +17,7 @@ CORE_FILES = [
     "docs/en/memorization-outline.md",
     "docs/en/calculation-algorithm-coach.md",
     "docs/en/output-format.md",
+    "docs/en/docx-style-guide.md",
     "docs/zh-CN/README.md",
     "docs/zh-CN/overall-workflow.md",
     "docs/zh-CN/deep-lecture-notes.md",
@@ -25,6 +26,7 @@ CORE_FILES = [
     "docs/zh-CN/memorization-outline.md",
     "docs/zh-CN/calculation-algorithm-coach.md",
     "docs/zh-CN/output-format.md",
+    "docs/zh-CN/docx-style-guide.md",
     "assets/templates/final-review-request.md",
 ]
 
@@ -59,6 +61,8 @@ def main() -> int:
         "Supported discipline categories",
         "docs/en/categories/README.md",
         "docs/zh-CN/categories/README.md",
+        "docs/en/docx-style-guide.md",
+        "docs/zh-CN/docx-style-guide.md",
     ]
     absent = [term for term in required_terms if term not in skill]
     if absent:
