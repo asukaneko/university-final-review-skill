@@ -1,6 +1,6 @@
 # Output Format
 
-Use clear and exam-oriented Markdown.
+Use clear and exam-oriented Markdown. If the user asks for DOCX / Word output, also follow the layout rules in [`docx-style-guide.md`](docx-style-guide.md).
 
 ## Recommended chapter format
 
@@ -33,6 +33,9 @@ Use tables for:
 - Question type mapping
 - Formula summaries
 - Error-prone details
+- Case-analysis structures
+- Clinical reasoning chains
+- Legal rule elements
 
 ## Mock exam format
 
@@ -44,6 +47,24 @@ A complete mock exam should include:
 - Point values
 - Answer key
 - Scoring rubric
+
+## DOCX output format
+
+When generating a DOCX document, prefer these layout elements:
+
+- Centered course title and chapter title
+- Header with course name, chapter, or topic
+- Footer with material type, page number, or review-note label
+- Light-blue main-thread callout box
+- Learning objective list
+- Table of contents
+- Concept and exam-focus tables with dark-blue headers
+- Pale-yellow notice boxes
+- Pale-red mistake-prone boxes
+- Light-gray formula, code, or example blocks
+- Page breaks between major chapters
+
+See [`docx-style-guide.md`](docx-style-guide.md) for detailed visual rules.
 
 ## Grounding labels
 
