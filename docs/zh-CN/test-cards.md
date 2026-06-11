@@ -153,3 +153,58 @@
 ```text
 ID,Front,Back,Chapter,Topic,Difficulty,CardType,Tags
 ```
+
+## 生成 HTML 复习界面
+
+仓库提供零依赖脚本，可把测试卡 CSV 转换成单文件 HTML 复习界面：
+
+```bash
+python scripts/generate_test_cards_html.py \
+  --input examples/test_cards.sample.csv \
+  --output output/test_cards.html \
+  --title "大学期末复习测试卡" \
+  --language zh-CN
+```
+
+生成的 HTML 可以离线打开，适合交给学生直接复习。
+
+### 支持的 CSV 字段
+
+推荐字段：
+
+```text
+ID,Front,Back,Chapter,Topic,Difficulty,CardType,Tags
+```
+
+脚本也支持常见中文表头别名，例如：
+
+- `正面` → `Front`
+- `背面` / `答案` / `解析` → `Back`
+- `章节` → `Chapter`
+- `主题` / `知识点` → `Topic`
+- `难度` → `Difficulty`
+- `卡片类型` / `类型` → `CardType`
+- `标签` → `Tags`
+
+### HTML 界面功能
+
+- 搜索题干、答案、主题和标签；
+- 按章节、难度、卡片类型筛选；
+- 翻卡显示答案；
+- 使用 `1/2/3/4` 标记“不会 / 困难 / 掌握 / 熟练”；
+- 自动记录复习次数、掌握分数和最后复习时间；
+- “只看错题/困难”模式；
+- 随机排序；
+- 导出学习记录 CSV；
+- 浏览器本地 `localStorage` 保存进度；
+- 快捷键：空格翻卡，左右方向键切换卡片。
+
+### 生成测试卡 CSV 的建议
+
+在完整复习包中，先生成 CSV，再生成 HTML：
+
+1. 按章节生成测试卡；
+2. 每张卡只测试一个知识点；
+3. 给每张卡标注章节、主题、难度、类型和标签；
+4. 使用 `generate_test_cards_html.py` 生成可交互复习界面；
+5. 让学生先做全部卡片，再用“只看错题/困难”进行二轮复习。

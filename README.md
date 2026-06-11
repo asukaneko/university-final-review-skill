@@ -86,9 +86,11 @@ The skill can generate:
 ├── assets/templates/
 │   └── final-review-request.md
 ├── examples/
-│   └── review_content.sample.json
+│   ├── review_content.sample.json
+│   └── test_cards.sample.csv
 ├── scripts/
 │   ├── generate_styled_docx.py
+│   ├── generate_test_cards_html.py
 │   ├── build_review_plan.py
 │   ├── package_skill.py
 │   └── validate_skill.py
@@ -160,6 +162,18 @@ Generate a styled DOCX handout from the sample JSON:
 ```bash
 python scripts/generate_styled_docx.py --input examples/review_content.sample.json --output output/final_review.docx
 ```
+
+Generate a standalone HTML test-card review interface from CSV:
+
+```bash
+python scripts/generate_test_cards_html.py \
+  --input examples/test_cards.sample.csv \
+  --output output/test_cards.html \
+  --title "University Final Review Test Cards" \
+  --language en
+```
+
+The generated HTML works offline and includes search, filters, flip-card review, keyboard shortcuts, self-rating, weak-card review, progress statistics, and localStorage-based progress tracking.
 
 Validate the repository structure:
 

@@ -153,3 +153,58 @@ When the user asks for Anki/CSV style output, use columns:
 ```text
 ID,Front,Back,Chapter,Topic,Difficulty,CardType,Tags
 ```
+
+## Generate an HTML review interface
+
+The repository includes a zero-dependency script that converts a test-card CSV file into a standalone HTML review interface:
+
+```bash
+python scripts/generate_test_cards_html.py \
+  --input examples/test_cards.sample.csv \
+  --output output/test_cards.html \
+  --title "University Final Review Test Cards" \
+  --language en
+```
+
+The generated HTML works offline and can be shared directly with students.
+
+### Supported CSV columns
+
+Recommended columns:
+
+```text
+ID,Front,Back,Chapter,Topic,Difficulty,CardType,Tags
+```
+
+The script also supports common aliases, including lowercase headers and Chinese headers:
+
+- `正面` → `Front`
+- `背面` / `答案` / `解析` → `Back`
+- `章节` → `Chapter`
+- `主题` / `知识点` → `Topic`
+- `难度` → `Difficulty`
+- `卡片类型` / `类型` → `CardType`
+- `标签` → `Tags`
+
+### HTML interface features
+
+- Search front, back, topic, and tags.
+- Filter by chapter, difficulty, and card type.
+- Flip cards to reveal answers.
+- Use `1/2/3/4` to mark Again / Hard / Good / Easy.
+- Track reviews, mastery score, and last-reviewed time.
+- Weak-card-only review mode.
+- Shuffle mode.
+- Export progress as CSV.
+- Save progress in browser `localStorage`.
+- Keyboard shortcuts: space to flip, arrow keys to navigate.
+
+### Recommended workflow
+
+For a complete review package:
+
+1. Generate chapter-based test cards as CSV.
+2. Keep one main knowledge point per card.
+3. Tag every card with chapter, topic, difficulty, type, and tags.
+4. Generate the HTML interface with `generate_test_cards_html.py`.
+5. Ask students to review all cards once, then use weak-card-only mode for the second round.
