@@ -9,6 +9,7 @@ ROOT = Path(__file__).resolve().parents[1]
 CORE_FILES = [
     "SKILL.md",
     "README.md",
+    "requirements.txt",
     "docs/en/README.md",
     "docs/en/overall-workflow.md",
     "docs/en/deep-lecture-notes.md",
@@ -28,6 +29,8 @@ CORE_FILES = [
     "docs/zh-CN/output-format.md",
     "docs/zh-CN/docx-style-guide.md",
     "assets/templates/final-review-request.md",
+    "examples/review_content.sample.json",
+    "scripts/generate_styled_docx.py",
 ]
 
 REMOVED_FILES = [
@@ -66,7 +69,10 @@ def main() -> int:
         return 1
 
     skill = (ROOT / "SKILL.md").read_text(encoding="utf-8")
-    required_terms = [
+    readme = (ROOT / "README.md").read_text(encoding="utf-8")
+    requirements = (ROOT / "requirements.txt").read_text(encoding="utf-8")
+
+    required_skill_terms = [
         "name:",
         "description:",
         "University Final Review",
@@ -78,11 +84,28 @@ def main() -> int:
         "docs/en/docx-style-guide.md",
         "docs/zh-CN/docx-style-guide.md",
     ]
-    absent = [term for term in required_terms if term not in skill]
+    absent = [term for term in required_skill_terms if term not in skill]
     if absent:
         print("SKILL.md is missing required terms:")
         for term in absent:
             print(f"- {term}")
+        return 1
+
+    required_readme_terms = [
+        "generate_styled_docx.py",
+        "review_content.sample.json",
+        "python-docx",
+        "Styled DOCX Generator",
+    ]
+    absent_readme = [term for term in required_readme_terms if term not in readme]
+    if absent_readme:
+        print("README.md is missing required terms:")
+        for term in absent_readme:
+            print(f"- {term}")
+        return 1
+
+    if "python-docx" not in requirements:
+        print("requirements.txt must include python-docx")
         return 1
 
     forbidden_terms = [
