@@ -40,9 +40,9 @@ Use the most relevant category guide when generating the review package:
 5. Identify high-priority exam points and likely question types.
 6. Generate a chapter-based question bank with answers and explanations.
 7. Produce memorization outlines and last-minute checklists.
-8. Provide discipline-specific worked examples where relevant:
-   - calculation, proof, derivation, or coding for STEM courses;
-   - experiment interpretation for natural sciences;
+8. Provide discipline-specific worked examples where relevant, using `docs/en/problem-solving-coach.md` or `docs/zh-CN/problem-solving-coach.md`:
+   - calculation, proof, derivation, coding, or system design for STEM courses;
+   - theorem, experiment, graph, or mechanism interpretation for natural sciences;
    - clinical reasoning and safety cautions for medical courses;
    - issue-rule-application-conclusion analysis for law;
    - thesis-evidence-analysis writing for humanities;
@@ -62,21 +62,21 @@ Recommended references:
 
 - `docs/en/overall-workflow.md`
 - `docs/en/categories/README.md`
+- `docs/en/problem-solving-coach.md`
 - `docs/en/docx-style-guide.md`
 - `docs/en/deep-lecture-notes.md`
 - `docs/en/exam-point-predictor.md`
 - `docs/en/question-bank-generator.md`
 - `docs/en/memorization-outline.md`
-- `docs/en/calculation-algorithm-coach.md`
 - `docs/en/output-format.md`
 - `docs/zh-CN/overall-workflow.md`
 - `docs/zh-CN/categories/README.md`
+- `docs/zh-CN/problem-solving-coach.md`
 - `docs/zh-CN/docx-style-guide.md`
 - `docs/zh-CN/deep-lecture-notes.md`
 - `docs/zh-CN/exam-point-predictor.md`
 - `docs/zh-CN/question-bank-generator.md`
 - `docs/zh-CN/memorization-outline.md`
-- `docs/zh-CN/calculation-algorithm-coach.md`
 - `docs/zh-CN/output-format.md`
 
 ## Output principles
@@ -101,7 +101,7 @@ When the user asks for a complete review package, include:
 4. Exam point prediction
 5. Question bank
 6. Memorization outline
-7. Discipline-specific worked examples where applicable
+7. Discipline-specific worked examples and analysis templates where applicable
 8. Final sprint checklist
 9. Optional polished DOCX handout using the style guide
 10. 100-point mock exam with answer key and scoring rubric
