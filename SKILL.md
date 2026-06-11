@@ -1,6 +1,6 @@
 ---
 name: university-final-review
-description: Generate comprehensive, cross-disciplinary university final-exam review materials from PPT slides, lecture notes, assignments, syllabi, screenshots, lab materials, case materials, or past papers. Use this skill when the user asks for final review notes, exam-point prediction, question banks, memorization outlines, mock exams, discipline-specific review plans, or step-by-step problem/case/clinical/proof coaching.
+description: Generate comprehensive, cross-disciplinary university final-exam review materials from PPT slides, lecture notes, assignments, syllabi, screenshots, lab materials, case materials, or past papers. Use this skill when the user asks for final review notes, exam-point prediction, question banks, memorization outlines, mock exams, discipline-specific review plans, step-by-step problem/case/clinical/proof coaching, or polished DOCX/Word review handouts.
 ---
 
 # University Final Review Skill
@@ -15,6 +15,7 @@ Use this skill when the user wants to:
 - Predict likely exam points.
 - Generate practice questions and mock exams.
 - Create memorization outlines.
+- Export polished Word / DOCX study handouts.
 - Explain discipline-specific problem solving, such as calculation, proof, experiment analysis, case analysis, legal issue spotting, clinical reasoning, design critique, or essay planning.
 
 ## Supported discipline categories
@@ -48,7 +49,8 @@ Use the most relevant category guide when generating the review package:
    - theory-method-case analysis for social sciences;
    - model-financial-case analysis for business and economics;
    - lesson-plan, critique, or portfolio review for education, arts, and design.
-9. Generate a complete mock exam if requested.
+9. If the user requests DOCX / Word output, apply the DOCX style guide instead of producing an unstyled plain document.
+10. Generate a complete mock exam if requested.
 
 ## Documentation
 
@@ -60,6 +62,7 @@ Recommended references:
 
 - `docs/en/overall-workflow.md`
 - `docs/en/categories/README.md`
+- `docs/en/docx-style-guide.md`
 - `docs/en/deep-lecture-notes.md`
 - `docs/en/exam-point-predictor.md`
 - `docs/en/question-bank-generator.md`
@@ -68,6 +71,7 @@ Recommended references:
 - `docs/en/output-format.md`
 - `docs/zh-CN/overall-workflow.md`
 - `docs/zh-CN/categories/README.md`
+- `docs/zh-CN/docx-style-guide.md`
 - `docs/zh-CN/deep-lecture-notes.md`
 - `docs/zh-CN/exam-point-predictor.md`
 - `docs/zh-CN/question-bank-generator.md`
@@ -82,6 +86,7 @@ Recommended references:
 - Choose an output structure that fits the discipline.
 - Make the output directly useful for studying, memorizing, analyzing, and solving questions.
 - Use clear sectioning, tables, worked examples, concept maps, timelines, case templates, and scoring rubrics when useful.
+- For DOCX output, use polished academic handout formatting: blue headings, callout boxes, readable tables, headers, footers, page breaks, and printable spacing.
 - For medical, legal, financial, or other high-stakes subjects, frame outputs as study support, not professional advice.
 - For Chinese users, produce exam-oriented Chinese explanations unless the user requests English.
 - For English users, produce polished English study notes unless the user requests Chinese.
@@ -98,4 +103,5 @@ When the user asks for a complete review package, include:
 6. Memorization outline
 7. Discipline-specific worked examples where applicable
 8. Final sprint checklist
-9. 100-point mock exam with answer key and scoring rubric
+9. Optional polished DOCX handout using the style guide
+10. 100-point mock exam with answer key and scoring rubric
