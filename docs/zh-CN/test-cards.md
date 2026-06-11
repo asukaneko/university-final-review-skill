@@ -196,6 +196,7 @@ ID,Front,Back,Chapter,Topic,Difficulty,CardType,Tags
 - “只看错题/困难”模式；
 - 随机排序；
 - 导出学习记录 CSV；
+- 一键重置当前卡组学习进度；
 - 浏览器本地 `localStorage` 保存进度；
 - 快捷键：空格翻卡，左右方向键切换卡片。
 

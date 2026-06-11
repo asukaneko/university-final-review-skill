@@ -117,6 +117,8 @@ def build_html(cards: list[dict[str, str]], title: str, language: str) -> str:
             "easy": "熟练",
             "shuffle": "随机排序",
             "reset": "重置筛选",
+            "resetProgress": "重置进度",
+            "confirmResetProgress": "确定要清空当前卡组的所有学习进度吗？此操作不可撤销。",
             "wrongOnly": "只看错题/困难",
             "export": "导出学习记录",
             "progress": "学习进度",
@@ -144,6 +146,8 @@ def build_html(cards: list[dict[str, str]], title: str, language: str) -> str:
             "easy": "Easy",
             "shuffle": "Shuffle",
             "reset": "Reset filters",
+            "resetProgress": "Reset progress",
+            "confirmResetProgress": "Clear all study progress for this card set? This cannot be undone.",
             "wrongOnly": "Weak cards only",
             "export": "Export progress",
             "progress": "Progress",
@@ -220,6 +224,8 @@ def build_html(cards: list[dict[str, str]], title: str, language: str) -> str:
     }}
     button.secondary {{ background: #334155; }}
     button.ghost {{ background: #fff; color: var(--text); border: 1px solid var(--border); box-shadow: none; }}
+    button.ghost.danger-text {{ color: var(--danger); border-color: rgba(220,38,38,.24); }}
+    button.ghost.danger-text:hover {{ background: #fff5f5; }}
     button.warn {{ background: var(--accent); }}
     button.danger {{ background: var(--danger); }}
     button.good {{ background: var(--primary2); }}
@@ -313,6 +319,7 @@ def build_html(cards: list[dict[str, str]], title: str, language: str) -> str:
       <button class="ghost" id="shuffleBtn"></button>
       <button class="ghost" id="wrongOnlyBtn"></button>
       <button class="ghost" id="resetBtn"></button>
+      <button class="ghost danger-text" id="resetProgressBtn"></button>
       <button class="secondary" id="exportBtn"></button>
     </section>
 
@@ -355,6 +362,7 @@ function initLabels() {{
   $('shuffleBtn').textContent = L.shuffle;
   $('wrongOnlyBtn').textContent = L.wrongOnly;
   $('resetBtn').textContent = L.reset;
+  $('resetProgressBtn').textContent = L.resetProgress;
   $('exportBtn').textContent = L.export;
   $('cardsLabel').textContent = L.cards;
   $('reviewedLabel').textContent = L.reviewed;
@@ -501,6 +509,14 @@ function resetFilters() {{
   $('search').value = ''; $('chapter').value = ''; $('difficulty').value = ''; $('cardType').value = ''; weakOnly = false; applyFilters();
 }}
 
+function resetProgress() {{
+  if (!confirm(L.confirmResetProgress)) return;
+  progress = {{}};
+  localStorage.removeItem(STORAGE_KEY);
+  revealed = false;
+  render();
+}}
+
 function exportProgress() {{
   const rows = [['ID','Reviews','Score','LastReviewed']];
   CARDS.forEach(c => {{ const p = progress[c.ID] || {{}}; rows.push([c.ID, p.reviews || 0, p.score || 0, p.lastReviewed || '']); }});
@@ -514,6 +530,7 @@ function exportProgress() {{
 $('shuffleBtn').onclick = shuffle;
 $('wrongOnlyBtn').onclick = () => {{ weakOnly = !weakOnly; applyFilters(); }};
 $('resetBtn').onclick = resetFilters;
+$('resetProgressBtn').onclick = resetProgress;
 $('exportBtn').onclick = exportProgress;
 document.addEventListener('keydown', e => {{
   if (['INPUT','SELECT'].includes(document.activeElement.tagName)) return;

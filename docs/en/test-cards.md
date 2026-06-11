@@ -196,6 +196,7 @@ The script also supports common aliases, including lowercase headers and Chinese
 - Weak-card-only review mode.
 - Shuffle mode.
 - Export progress as CSV.
+- Reset progress for the current card set.
 - Save progress in browser `localStorage`.
 - Keyboard shortcuts: space to flip, arrow keys to navigate.
 
