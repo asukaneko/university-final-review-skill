@@ -228,21 +228,28 @@ def build_html(cards: list[dict[str, str]], title: str, language: str) -> str:
     .pill.green {{ background: rgba(15,118,110,.10); color: #0f766e; }}
     .pill.orange {{ background: rgba(245,158,11,.13); color: #b45309; }}
     .flip-card {{ min-height: 330px; perspective: 1400px; margin-bottom: 16px; cursor: pointer; }}
-    .flip-inner {{
-      position: relative; min-height: 330px; transition: transform .62s cubic-bezier(.2,.75,.2,1.08), filter .25s ease;
-      transform-style: preserve-3d; will-change: transform;
-    }}
-    .flip-card:hover .flip-inner {{ filter: drop-shadow(0 18px 28px rgba(37,99,235,.12)); }}
-    .flip-card.revealed .flip-inner {{ transform: rotateY(180deg); }}
+    .flip-inner {{ position: relative; min-height: 330px; transform-style: flat; }}
+    .flip-card:hover .face {{ box-shadow: 0 18px 34px rgba(37,99,235,.14); }}
     .face {{
       position: absolute; inset: 0; border-radius: 24px; padding: 30px; background: linear-gradient(180deg, #fff, #f8fbff);
-      border: 1px solid rgba(37,99,235,.16); backface-visibility: hidden; -webkit-backface-visibility: hidden;
-      display:flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; overflow: auto;
+      border: 1px solid rgba(37,99,235,.16); display:flex; flex-direction: column; justify-content: center; align-items: center;
+      text-align: center; overflow: auto; transform-origin: center center; will-change: transform, opacity; transition:
+        opacity .34s ease,
+        transform .46s cubic-bezier(.18,.72,.24,1),
+        box-shadow .25s ease;
     }}
-    .face.front {{ box-shadow: inset 0 1px 0 rgba(255,255,255,.9); }}
-    .face.back {{ transform: rotateY(180deg); background: linear-gradient(180deg, #f7fffc, #fff); }}
+    .face.front {{ opacity: 1; transform: rotateY(0deg) scale(1); z-index: 2; box-shadow: inset 0 1px 0 rgba(255,255,255,.9); }}
+    .face.back {{ opacity: 0; transform: rotateY(-88deg) scale(.96); z-index: 1; pointer-events: none; background: linear-gradient(180deg, #f7fffc, #fff); }}
+    .flip-card.revealed .face.front {{ opacity: 0; transform: rotateY(88deg) scale(.96); z-index: 1; pointer-events: none; }}
+    .flip-card.revealed .face.back {{ opacity: 1; transform: rotateY(0deg) scale(1); z-index: 2; pointer-events: auto; }}
     .face-label {{ color: var(--muted); font-size: 13px; font-weight: 800; text-transform: uppercase; letter-spacing: .08em; margin-bottom: 14px; }}
     .content {{ max-width: 760px; margin: 0 auto; font-size: clamp(18px, 2.2vw, 26px); line-height: 1.6; white-space: pre-wrap; text-wrap: pretty; }}
+    @media (prefers-reduced-motion: reduce) {{
+      .face {{ transition: opacity .12s linear; transform: none !important; }}
+      .face.back {{ opacity: 0; }}
+      .flip-card.revealed .face.front {{ opacity: 0; }}
+      .flip-card.revealed .face.back {{ opacity: 1; }}
+    }}
     .review-buttons {{ display:grid; grid-template-columns: repeat(4, 1fr); gap: 10px; margin: 14px 0; }}
     .nav {{ display:flex; justify-content: space-between; gap: 10px; margin-top: 14px; }}
     .progressbar {{ height: 10px; background: rgba(99,112,131,.18); border-radius: 999px; overflow:hidden; margin-top: 12px; }}
@@ -364,6 +371,23 @@ function renderStats() {{
   $('position').textContent = filtered.length ? (index + 1) + '/' + filtered.length : '0/0';
 }}
 
+function setRevealed(value) {{
+  revealed = value;
+  const flipCard = $('flipCard');
+  const flipBtn = $('flipBtn');
+  if (flipCard) flipCard.classList.toggle('revealed', revealed);
+  if (flipBtn) flipBtn.textContent = revealed ? L.hideAnswer : L.showAnswer;
+}}
+
+function updateCurrentProgressMeta() {{
+  const card = filtered[index];
+  const p = card ? (progress[card.ID] || {{reviews:0, score:0}}) : {{reviews:0, score:0}};
+  const reviewMeta = $('reviewMeta');
+  if (reviewMeta) reviewMeta.textContent = 'reviews: ' + (p.reviews || 0);
+  renderStats();
+  renderList();
+}}
+
 function render() {{
   renderStats();
   const panel = $('cardPanel');
@@ -394,12 +418,12 @@ function render() {{
       <button class="good" data-score="3">3 · ${{esc(L.good)}}</button>
       <button data-score="4">4 · ${{esc(L.easy)}}</button>
     </div>
-    <div class="meta"><span class="pill">${{esc(card.Topic || '')}}</span><span class="pill">${{esc(card.Tags || '')}}</span><span class="pill">reviews: ${{p.reviews || 0}}</span></div>
+    <div class="meta"><span class="pill">${{esc(card.Topic || '')}}</span><span class="pill">${{esc(card.Tags || '')}}</span><span class="pill" id="reviewMeta">reviews: ${{p.reviews || 0}}</span></div>
     <div class="progressbar"><span style="width:${{Math.round((index + 1) / filtered.length * 100)}}%"></span></div>
     <div class="nav"><button class="ghost" id="prevBtn">←</button><button class="ghost" id="nextBtn">→</button></div>
   `;
-  $('flipBtn').onclick = () => {{ revealed = !revealed; render(); }};
-  $('flipCard').onclick = () => {{ revealed = !revealed; render(); }};
+  $('flipBtn').onclick = () => setRevealed(!revealed);
+  $('flipCard').onclick = () => setRevealed(!revealed);
   $('prevBtn').onclick = () => move(-1);
   $('nextBtn').onclick = () => move(1);
   document.querySelectorAll('[data-score]').forEach(btn => btn.onclick = () => grade(Number(btn.dataset.score)));
@@ -428,8 +452,8 @@ function grade(score) {{
   progress[card.ID] = {{reviews: (progress[card.ID]?.reviews || 0) + 1, score, lastReviewed: new Date().toISOString()}};
   save();
   if (score === 1) {{
-    revealed = true;
-    render();
+    setRevealed(true);
+    updateCurrentProgressMeta();
     return;
   }}
   move(1);
@@ -463,7 +487,7 @@ $('resetBtn').onclick = resetFilters;
 $('exportBtn').onclick = exportProgress;
 document.addEventListener('keydown', e => {{
   if (['INPUT','SELECT'].includes(document.activeElement.tagName)) return;
-  if (e.code === 'Space') {{ e.preventDefault(); revealed = !revealed; render(); }}
+  if (e.code === 'Space') {{ e.preventDefault(); setRevealed(!revealed); }}
   if (e.key === 'ArrowLeft') move(-1);
   if (e.key === 'ArrowRight') move(1);
   if (['1','2','3','4'].includes(e.key)) grade(Number(e.key));
