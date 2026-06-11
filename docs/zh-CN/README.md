@@ -13,7 +13,7 @@
 3. [考点预测](exam-point-predictor.md)
 4. [题库生成](question-bank-generator.md)
 5. [背诵提纲](memorization-outline.md)
-6. [计算题 / 算法题教练](calculation-algorithm-coach.md)
+6. [学科专属解题 / 分析教练](problem-solving-coach.md)
 7. [输出格式](output-format.md)
 8. [DOCX 文档排版指南](docx-style-guide.md)
 
