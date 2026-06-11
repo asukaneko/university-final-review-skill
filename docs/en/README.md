@@ -13,7 +13,7 @@ The skill helps transform university course materials into exam-ready review res
 3. [Exam Point Predictor](exam-point-predictor.md)
 4. [Question Bank Generator](question-bank-generator.md)
 5. [Memorization Outline](memorization-outline.md)
-6. [Calculation / Algorithm Coach](calculation-algorithm-coach.md)
+6. [Discipline Problem-Solving Coach](problem-solving-coach.md)
 7. [Output Format](output-format.md)
 8. [DOCX Style Guide](docx-style-guide.md)
 
@@ -32,5 +32,5 @@ The skill helps transform university course materials into exam-ready review res
 ## Recommended complete request
 
 ```text
-Use the university final review skill. Identify the discipline category from the uploaded course materials and generate a complete final-exam review package, including deep chapter notes, exam point prediction, question banks, memorization outlines, discipline-specific worked examples, a polished DOCX handout, and a 100-point mock exam.
+Use the university final review skill. Identify the discipline category from the uploaded course materials and generate a complete final-exam review package, including deep chapter notes, exam point prediction, question banks, memorization outlines, discipline-specific problem-solving templates, a polished DOCX handout, and a 100-point mock exam.
 ```
