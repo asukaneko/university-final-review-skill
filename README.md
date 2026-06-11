@@ -35,6 +35,7 @@ The skill can generate:
 .
 ├── SKILL.md
 ├── README.md
+├── requirements.txt
 ├── docs/
 │   ├── en/
 │   │   ├── README.md
@@ -78,7 +79,10 @@ The skill can generate:
 │       └── output-format.md
 ├── assets/templates/
 │   └── final-review-request.md
+├── examples/
+│   └── review_content.sample.json
 ├── scripts/
+│   ├── generate_styled_docx.py
 │   ├── build_review_plan.py
 │   ├── package_skill.py
 │   └── validate_skill.py
@@ -132,8 +136,21 @@ For Chinese courses:
 | Memorization Outline | Produces compact material for recitation and last-minute review. |
 | Problem-Solving Coach | Provides discipline-specific reasoning templates for calculation, proof, experiment analysis, legal cases, clinical reasoning, essays, business cases, and design critique. |
 | DOCX Style Guide | Defines polished Word-document formatting for printable review handouts. |
+| Styled DOCX Generator | Converts structured review JSON into a styled Word handout using `python-docx`. |
 
 ## Scripts
+
+Install the DOCX generator dependency:
+
+```bash
+pip install -r requirements.txt
+```
+
+Generate a styled DOCX handout from the sample JSON:
+
+```bash
+python scripts/generate_styled_docx.py --input examples/review_content.sample.json --output output/final_review.docx
+```
 
 Validate the repository structure:
 
