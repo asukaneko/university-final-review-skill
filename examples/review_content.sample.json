@@ -1,0 +1,112 @@
+{
+  "metadata": {
+    "course": "Operating Systems",
+    "title": "Operating Systems Final Review",
+    "subtitle": "Detailed Review Notes and Exam Focus",
+    "breadcrumb": "Operating Systems | Chapter 2 | Process and Thread",
+    "header": "Operating Systems - Final Review",
+    "footer": "Review Notes and Exam Focus",
+    "main_thread_label": "Main thread",
+    "main_thread": "This chapter explains how an operating system represents, schedules, switches, and coordinates running programs through processes and threads.",
+    "objectives": [
+      "Understand the relationship between program, process, and thread.",
+      "Explain process states and state transitions.",
+      "Compare user-level threads and kernel-level threads.",
+      "Answer common exam questions about PCB, context switching, and concurrency."
+    ]
+  },
+  "chapters": [
+    {
+      "title": "Processes and Threads",
+      "main_thread_label": "Chapter main thread",
+      "main_thread": "The exam usually asks this chapter through definitions, state-transition diagrams, PCB/TCB comparison, and short-answer questions about context switching.",
+      "objectives": [
+        "Define process, thread, PCB, and TCB.",
+        "Describe ready, running, and blocked states.",
+        "Explain why context switching has overhead."
+      ],
+      "concept_headers": ["Concept", "Meaning", "Exam interpretation"],
+      "concepts": [
+        {
+          "Concept": "Process",
+          "Meaning": "A running instance of a program with independent resources.",
+          "Exam interpretation": "Often tested as the basic unit of resource allocation."
+        },
+        {
+          "Concept": "Thread",
+          "Meaning": "A lightweight execution unit inside a process.",
+          "Exam interpretation": "Often tested as the basic unit of CPU scheduling."
+        },
+        {
+          "Concept": "PCB",
+          "Meaning": "A process control block that stores process state and management information.",
+          "Exam interpretation": "Usually appears in short-answer questions about process management."
+        }
+      ],
+      "sections": [
+        {
+          "title": "1. Process state transitions",
+          "paragraphs": [
+            "A process usually moves between ready, running, and blocked states. Ready means the process has all required resources except the CPU. Running means it is currently using the CPU. Blocked means it is waiting for an event such as I/O completion.",
+            "The key exam point is not only naming the states, but also explaining why transitions happen. For example, running to blocked usually occurs when the process requests I/O. Running to ready may occur when the time slice is exhausted."
+          ]
+        },
+        {
+          "title": "2. Thread comparison",
+          "paragraphs": [
+            "Threads reduce switching overhead because threads in the same process share the address space and many resources. However, synchronization becomes more important because shared data may create race conditions."
+          ]
+        }
+      ],
+      "formulas": [
+        {
+          "title": "Exam rule",
+          "text": "Process = resource allocation unit; Thread = CPU scheduling unit."
+        }
+      ],
+      "examples": [
+        {
+          "title": "Short-answer template",
+          "text": "A PCB is a data structure used by the operating system to record process information, including process state, program counter, CPU registers, scheduling information, memory information, and open files. It is the basis for process control and context switching."
+        }
+      ],
+      "notices": [
+        {
+          "title": "Notice",
+          "text": "Do not confuse a program with a process. A program is static code, while a process is a dynamic execution activity."
+        }
+      ],
+      "mistakes": [
+        {
+          "title": "Mistake-prone point",
+          "text": "A blocked process cannot immediately run even if the CPU is free; it must first wait for its event to complete and return to the ready state."
+        }
+      ],
+      "exam_focus_headers": ["Item", "Key point", "Exam interpretation"],
+      "exam_focus": [
+        {
+          "Item": "PCB",
+          "Key point": "Stores process management information",
+          "Exam interpretation": "Likely short-answer question."
+        },
+        {
+          "Item": "State transition",
+          "Key point": "Ready / running / blocked and transition reasons",
+          "Exam interpretation": "Likely diagram or explanation question."
+        }
+      ],
+      "quick_review": [
+        "Program is static; process is dynamic.",
+        "Process is the resource allocation unit.",
+        "Thread is the CPU scheduling unit.",
+        "Context switching saves and restores execution context."
+      ],
+      "questions": [
+        {
+          "question": "Why does context switching introduce overhead?",
+          "answer": "Because the OS must save the current execution context, update control blocks, choose another process or thread, and restore the new context."
+        }
+      ]
+    }
+  ]
+}
