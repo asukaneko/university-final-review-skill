@@ -6,7 +6,7 @@ import sys
 
 ROOT = Path(__file__).resolve().parents[1]
 
-REQUIRED_FILES = [
+CORE_FILES = [
     "SKILL.md",
     "README.md",
     "docs/en/README.md",
@@ -28,6 +28,20 @@ REQUIRED_FILES = [
     "assets/templates/final-review-request.md",
 ]
 
+CATEGORY_FILES = [
+    "categories/README.md",
+    "categories/stem-engineering.md",
+    "categories/natural-sciences.md",
+    "categories/medicine-health.md",
+    "categories/law.md",
+    "categories/humanities.md",
+    "categories/social-sciences.md",
+    "categories/business-economics.md",
+    "categories/education-arts.md",
+]
+
+REQUIRED_FILES = CORE_FILES + [f"docs/en/{path}" for path in CATEGORY_FILES] + [f"docs/zh-CN/{path}" for path in CATEGORY_FILES]
+
 
 def main() -> int:
     missing = [path for path in REQUIRED_FILES if not (ROOT / path).exists()]
@@ -38,7 +52,14 @@ def main() -> int:
         return 1
 
     skill = (ROOT / "SKILL.md").read_text(encoding="utf-8")
-    required_terms = ["name:", "description:", "University Final Review"]
+    required_terms = [
+        "name:",
+        "description:",
+        "University Final Review",
+        "Supported discipline categories",
+        "docs/en/categories/README.md",
+        "docs/zh-CN/categories/README.md",
+    ]
     absent = [term for term in required_terms if term not in skill]
     if absent:
         print("SKILL.md is missing required terms:")
