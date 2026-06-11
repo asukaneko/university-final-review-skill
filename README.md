@@ -50,6 +50,7 @@ The skill can generate:
 │   │   │   ├── business-economics.md
 │   │   │   └── education-arts.md
 │   │   ├── overall-workflow.md
+│   │   ├── learning-strategies.md
 │   │   ├── deep-lecture-notes.md
 │   │   ├── exam-point-predictor.md
 │   │   ├── question-bank-generator.md
@@ -70,6 +71,7 @@ The skill can generate:
 │       │   ├── business-economics.md
 │       │   └── education-arts.md
 │       ├── overall-workflow.md
+│       ├── learning-strategies.md
 │       ├── deep-lecture-notes.md
 │       ├── exam-point-predictor.md
 │       ├── question-bank-generator.md
@@ -129,6 +131,7 @@ For Chinese courses:
 | Module | Purpose |
 | --- | --- |
 | Overall Workflow | Converts raw course materials into a complete review pipeline. |
+| Evidence-Based Study Strategies | Adds active recall, spaced repetition, practice testing, worked examples, interleaving, and error logs. |
 | Discipline Categories | Applies discipline-specific review patterns. |
 | Deep Lecture Notes | Produces detailed chapter-by-chapter notes. |
 | Exam Point Predictor | Estimates likely exam topics and question forms. |

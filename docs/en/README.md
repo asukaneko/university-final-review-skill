@@ -9,13 +9,14 @@ The skill helps transform university course materials into exam-ready review res
 ## Core modules
 
 1. [Overall Workflow](overall-workflow.md)
-2. [Deep Lecture Notes](deep-lecture-notes.md)
-3. [Exam Point Predictor](exam-point-predictor.md)
-4. [Question Bank Generator](question-bank-generator.md)
-5. [Memorization Outline](memorization-outline.md)
-6. [Discipline Problem-Solving Coach](problem-solving-coach.md)
-7. [Output Format](output-format.md)
-8. [DOCX Style Guide](docx-style-guide.md)
+2. [Evidence-Based Study Strategies](learning-strategies.md)
+3. [Deep Lecture Notes](deep-lecture-notes.md)
+4. [Exam Point Predictor](exam-point-predictor.md)
+5. [Question Bank Generator](question-bank-generator.md)
+6. [Memorization Outline](memorization-outline.md)
+7. [Discipline Problem-Solving Coach](problem-solving-coach.md)
+8. [Output Format](output-format.md)
+9. [DOCX Style Guide](docx-style-guide.md)
 
 ## Discipline category guides
 

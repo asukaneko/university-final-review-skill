@@ -34,7 +34,7 @@ Use the most relevant category guide when generating the review package:
 ## Core workflow
 
 1. Identify the course, chapters, discipline category, exam scope, and available materials.
-2. Select the relevant discipline-specific review pattern.
+2. Apply evidence-based study principles from `docs/en/learning-strategies.md` or `docs/zh-CN/learning-strategies.md`, then select the relevant discipline-specific review pattern.
 3. Extract the chapter structure and major concepts from the user-provided files.
 4. Generate deep lecture notes for each chapter.
 5. Identify high-priority exam points and likely question types.
@@ -61,6 +61,7 @@ Chinese documentation is in `docs/zh-CN/`.
 Recommended references:
 
 - `docs/en/overall-workflow.md`
+- `docs/en/learning-strategies.md`
 - `docs/en/categories/README.md`
 - `docs/en/problem-solving-coach.md`
 - `docs/en/docx-style-guide.md`
@@ -70,6 +71,7 @@ Recommended references:
 - `docs/en/memorization-outline.md`
 - `docs/en/output-format.md`
 - `docs/zh-CN/overall-workflow.md`
+- `docs/zh-CN/learning-strategies.md`
 - `docs/zh-CN/categories/README.md`
 - `docs/zh-CN/problem-solving-coach.md`
 - `docs/zh-CN/docx-style-guide.md`

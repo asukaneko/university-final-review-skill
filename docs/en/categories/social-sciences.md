@@ -1,36 +1,84 @@
 # Social Sciences
 
-Use this guide for politics, sociology, psychology, communication, anthropology, public administration, social work, and related social-science courses.
+Use this guide for sociology, psychology, political science, international relations, communication, anthropology, criminology, social policy, and research-methods courses.
 
-## Review focus
+## Review goal
 
-- Theories, concepts, models, scholars, schools, and empirical findings
-- Research methods, variables, sampling, validity, reliability, and ethics
-- Social phenomena, institutions, cases, and policy implications
-- Theory-to-case application and evidence-based analysis
-- Comparison between competing explanations or frameworks
+Connect theories, concepts, methods, empirical findings, cases, and policy implications so the student can explain social phenomena and evaluate evidence.
 
-## Recommended chapter structure
+## What to extract from materials
 
-1. Theory and concept map
-2. Key scholars, schools, and definitions
-3. Research methods and evidence
-4. Mechanism or causal explanation
-5. Case application template
-6. Theory comparison table
-7. Common exam traps
-8. Practice short answers and essays
+- Theories, theorists, models, constructs, variables, hypotheses, and mechanisms.
+- Research designs, sampling, measurement, validity, reliability, ethics, and statistical interpretation.
+- Empirical findings, case studies, policy examples, historical context, and comparative evidence.
+- Lecture debates, critique points, and methodological limitations.
+- Assessment criteria for essays, reports, case analyses, or data interpretation.
 
-## Typical question types
+## Chapter note structure
 
-- Concept explanation
-- Theory comparison
-- Research method identification
-- Case analysis
-- Data or chart interpretation
-- Policy or social phenomenon analysis
-- Essay questions
+1. **Core social question**: what phenomenon needs explanation.
+2. **Theory map**: theorists, assumptions, causal mechanisms, predictions.
+3. **Concept definitions**: construct, dimensions, measurement indicators.
+4. **Evidence summary**: studies, cases, data patterns, limitations.
+5. **Method notes**: design, sample, measure, validity, ethics.
+6. **Application examples**: policy, organization, media, community, cross-cultural case.
+7. **Comparison table**: theories or methods side by side.
+8. **Critique bank**: strengths, weaknesses, bias, generalizability.
+9. **Essay/case templates**.
+10. **Practice questions**.
 
-## Output emphasis
+## Typical exam question types
 
-Connect theory, method, evidence, and case application. For essay questions, provide a clear claim, theory framework, evidence, analysis, and limitation.
+- Define concepts and compare theories.
+- Apply theory to a case, policy, event, or dataset.
+- Evaluate empirical evidence and methodology.
+- Interpret statistics, graphs, survey results, or interview excerpts.
+- Write essays on debates, causes, consequences, or interventions.
+- Design a small research study and justify method choices.
+
+## Analysis templates
+
+### Theory application
+
+Use: **Phenomenon → Relevant theory → Key concepts → Evidence/case → Explanation → Limitation → Alternative theory**.
+
+### Research-methods question
+
+Use: **Research question → Hypothesis → Variables → Design → Sample → Measurement → Ethics → Validity threats → Interpretation**.
+
+### Policy/case analysis
+
+Use: **Problem → Stakeholders → Causes → Evidence → Options → Trade-offs → Recommendation → Evaluation metrics**.
+
+## Question bank rules
+
+Generate:
+
+- 20% concept and theorist recall.
+- 25% theory comparison and application.
+- 25% research-method/data interpretation.
+- 20% case or policy analysis.
+- 10% integrative essay prompts.
+
+Answers should include evidence and limitations, not only theory descriptions.
+
+## High-yield exam prediction signals
+
+Prioritize topics that:
+
+- Appear across lectures as core theoretical frameworks.
+- Are linked to classic studies, landmark cases, or policy debates.
+- Involve methods, validity, ethics, or data interpretation.
+- Can be applied to current or unfamiliar examples.
+
+## Active study plan
+
+- Make theory cards: assumptions, mechanism, evidence, critique, example.
+- Practice applying the same case to multiple theories.
+- Redraw research designs and identify threats to validity.
+- Use spaced repetition for theorists, constructs, and study findings.
+- Write timed paragraph plans for likely essay verbs.
+
+## Scoring rubric
+
+Award marks for conceptual accuracy, theory-case fit, evidence use, methodological awareness, critique, balanced judgment, and clear structure.
