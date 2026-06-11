@@ -23,8 +23,9 @@ The skill can generate:
 - Exam point prediction
 - Question banks with answers and explanations
 - Memorization outlines
-- Calculation, proof, experiment, case-analysis, or clinical-reasoning walkthroughs
-- Discipline-specific review templates
+- Discipline-specific problem-solving and analysis templates
+- Calculation, proof, experiment, case-analysis, clinical-reasoning, essay-planning, or design-critique walkthroughs
+- Polished DOCX / Word review handouts
 - Final sprint checklists
 - Full mock exams with scoring rubrics
 
@@ -52,7 +53,8 @@ The skill can generate:
 │   │   ├── exam-point-predictor.md
 │   │   ├── question-bank-generator.md
 │   │   ├── memorization-outline.md
-│   │   ├── calculation-algorithm-coach.md
+│   │   ├── problem-solving-coach.md
+│   │   ├── docx-style-guide.md
 │   │   └── output-format.md
 │   └── zh-CN/
 │       ├── README.md
@@ -71,7 +73,8 @@ The skill can generate:
 │       ├── exam-point-predictor.md
 │       ├── question-bank-generator.md
 │       ├── memorization-outline.md
-│       ├── calculation-algorithm-coach.md
+│       ├── problem-solving-coach.md
+│       ├── docx-style-guide.md
 │       └── output-format.md
 ├── assets/templates/
 │   └── final-review-request.md
@@ -108,13 +111,13 @@ Copy this repository into a supported skill directory, or keep it as a reusable 
 Example request:
 
 ```text
-Use the university final review skill. Read the uploaded Chapter 1-5 slides and generate detailed final-exam review notes, exam points, a question bank, memorization outlines, and a 100-point mock exam.
+Use the university final review skill. Identify the discipline category from the uploaded Chapter 1-5 materials and generate detailed final-exam review notes, exam points, a question bank, memorization outlines, discipline-specific problem-solving templates, a polished DOCX handout, and a 100-point mock exam.
 ```
 
 For Chinese courses:
 
 ```text
-请使用大学期末复习 Skill，查看我上传的第 1-5 章 PPT，按对应学科大类生成详细复习资料，包括逐章讲义、考点预测、题库、背诵提纲和一套 100 分模拟卷。
+请使用大学期末复习 Skill，查看我上传的第 1-5 章资料，先判断学科大类，再生成详细复习资料，包括逐章讲义、考点预测、题库、背诵提纲、学科专属解题/分析模板、一份排版美观的 DOCX 文档和一套 100 分模拟卷。
 ```
 
 ## Skill modules
@@ -127,7 +130,8 @@ For Chinese courses:
 | Exam Point Predictor | Estimates likely exam topics and question forms. |
 | Question Bank Generator | Creates questions, answers, explanations, and rubrics. |
 | Memorization Outline | Produces compact material for recitation and last-minute review. |
-| Calculation / Algorithm Coach | Explains calculation, proof, scheduling, database, network, and algorithm problems step by step. |
+| Problem-Solving Coach | Provides discipline-specific reasoning templates for calculation, proof, experiment analysis, legal cases, clinical reasoning, essays, business cases, and design critique. |
+| DOCX Style Guide | Defines polished Word-document formatting for printable review handouts. |
 
 ## Scripts
 
