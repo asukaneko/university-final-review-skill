@@ -15,6 +15,7 @@ Use this skill when the user wants to:
 - Predict likely exam points.
 - Generate practice questions and mock exams.
 - Create memorization outlines.
+- Generate active-recall test cards, flashcards, Anki-style CSV files, or interactive HTML review interfaces.
 - Export polished Word / DOCX study handouts.
 - Explain discipline-specific problem solving, such as calculation, proof, experiment analysis, case analysis, legal issue spotting, clinical reasoning, design critique, or essay planning.
 
@@ -39,8 +40,9 @@ Use the most relevant category guide when generating the review package:
 4. Generate deep lecture notes for each chapter.
 5. Identify high-priority exam points and likely question types.
 6. Generate a chapter-based question bank with answers and explanations; include active-recall test cards using `docs/en/test-cards.md` or `docs/zh-CN/test-cards.md` when a complete package is requested.
-7. Produce memorization outlines and last-minute checklists.
-8. Provide discipline-specific worked examples where relevant, using `docs/en/problem-solving-coach.md` or `docs/zh-CN/problem-solving-coach.md`:
+7. If the user requests an interactive card-review tool, first generate a test-card CSV with columns `ID,Front,Back,Chapter,Topic,Difficulty,CardType,Tags`, then run `scripts/generate_test_cards_html.py` to create a standalone HTML review interface.
+8. Produce memorization outlines and last-minute checklists.
+9. Provide discipline-specific worked examples where relevant, using `docs/en/problem-solving-coach.md` or `docs/zh-CN/problem-solving-coach.md`:
    - calculation, proof, derivation, coding, or system design for STEM courses;
    - theorem, experiment, graph, or mechanism interpretation for natural sciences;
    - clinical reasoning and safety cautions for medical courses;
@@ -49,8 +51,8 @@ Use the most relevant category guide when generating the review package:
    - theory-method-case analysis for social sciences;
    - model-financial-case analysis for business and economics;
    - lesson-plan, critique, or portfolio review for education, arts, and design.
-9. If the user requests DOCX / Word output, apply the DOCX style guide instead of producing an unstyled plain document.
-10. Generate a blueprint-driven precision mock exam using `docs/en/precision-mock-exam.md` or `docs/zh-CN/precision-mock-exam.md` if requested or when a complete package is requested.
+10. If the user requests DOCX / Word output, apply the DOCX style guide instead of producing an unstyled plain document.
+11. Generate a blueprint-driven precision mock exam using `docs/en/precision-mock-exam.md` or `docs/zh-CN/precision-mock-exam.md` if requested or when a complete package is requested.
 
 ## Documentation
 
@@ -72,6 +74,7 @@ Recommended references:
 - `docs/en/precision-mock-exam.md`
 - `docs/en/memorization-outline.md`
 - `docs/en/output-format.md`
+- `scripts/generate_test_cards_html.py`
 - `docs/zh-CN/overall-workflow.md`
 - `docs/zh-CN/learning-strategies.md`
 - `docs/zh-CN/categories/README.md`
@@ -91,7 +94,8 @@ Recommended references:
 - Do not produce vague summaries when the user asks for exam review.
 - Choose an output structure that fits the discipline.
 - Make the output directly useful for studying, memorizing, analyzing, and solving questions.
-- Use clear sectioning, tables, worked examples, concept maps, timelines, case templates, and scoring rubrics when useful.
+- Use clear sectioning, tables, worked examples, concept maps, timelines, case templates, test cards, and scoring rubrics when useful.
+- For interactive test-card review, generate a clean CSV first, then create a standalone HTML interface with search, filters, flip cards, self-rating, weak-card review, progress tracking, and exportable study records.
 - For DOCX output, use polished academic handout formatting: blue headings, callout boxes, readable tables, headers, footers, page breaks, and printable spacing.
 - For medical, legal, financial, or other high-stakes subjects, frame outputs as study support, not professional advice.
 - For Chinese users, produce exam-oriented Chinese explanations unless the user requests English.
@@ -106,7 +110,7 @@ When the user asks for a complete review package, include:
 3. Chapter-by-chapter deep notes
 4. Exam point prediction
 5. Question bank
-6. Test cards for active recall
+6. Test cards for active recall, optionally exported as CSV and interactive HTML using `scripts/generate_test_cards_html.py`
 7. Memorization outline
 8. Discipline-specific worked examples and analysis templates where applicable
 9. Error log and weak-point repair plan
