@@ -126,6 +126,7 @@ def build_html(cards: list[dict[str, str]], title: str, language: str) -> str:
             "empty": "没有符合筛选条件的卡片。",
             "front": "正面",
             "back": "背面",
+            "unreviewed": "未复习",
             "shortcuts": "快捷键：空格翻卡，1 不会，2 困难，3 掌握，4 熟练，←/→ 切换。",
         },
         "en": {
@@ -152,6 +153,7 @@ def build_html(cards: list[dict[str, str]], title: str, language: str) -> str:
             "empty": "No cards match the current filters.",
             "front": "Front",
             "back": "Back",
+            "unreviewed": "Unreviewed",
             "shortcuts": "Shortcuts: Space flips, 1 Again, 2 Hard, 3 Good, 4 Easy, ←/→ navigate.",
         },
     }[lang]
@@ -227,9 +229,18 @@ def build_html(cards: list[dict[str, str]], title: str, language: str) -> str:
     .pill {{ border-radius: 999px; background: rgba(37,99,235,.10); color: #1d4ed8; padding: 7px 10px; font-size: 12px; font-weight: 800; }}
     .pill.green {{ background: rgba(15,118,110,.10); color: #0f766e; }}
     .pill.orange {{ background: rgba(245,158,11,.13); color: #b45309; }}
+    .pill.status {{ transition: background .25s ease, color .25s ease, transform .25s ease; }}
+    .pill.status.again {{ background: rgba(220,38,38,.12); color: #b91c1c; }}
+    .pill.status.hard {{ background: rgba(245,158,11,.16); color: #b45309; }}
+    .pill.status.good {{ background: rgba(15,118,110,.12); color: #0f766e; }}
+    .pill.status.easy {{ background: rgba(37,99,235,.12); color: #1d4ed8; }}
     .flip-card {{ min-height: 330px; perspective: 1400px; margin-bottom: 16px; cursor: pointer; }}
     .flip-inner {{ position: relative; min-height: 330px; transform-style: flat; }}
     .flip-card:hover .face {{ box-shadow: 0 18px 34px rgba(37,99,235,.14); }}
+    .flip-card.answered-again .face {{ border-color: rgba(220,38,38,.48); background: linear-gradient(180deg, #fff, #fff5f5); }}
+    .flip-card.answered-hard .face {{ border-color: rgba(245,158,11,.52); background: linear-gradient(180deg, #fff, #fff8ea); }}
+    .flip-card.answered-good .face {{ border-color: rgba(15,118,110,.46); background: linear-gradient(180deg, #fff, #f1fffb); }}
+    .flip-card.answered-easy .face {{ border-color: rgba(37,99,235,.46); background: linear-gradient(180deg, #fff, #f3f7ff); }}
     .face {{
       position: absolute; inset: 0; border-radius: 24px; padding: 30px; background: linear-gradient(180deg, #fff, #f8fbff);
       border: 1px solid rgba(37,99,235,.16); display:flex; flex-direction: column; justify-content: center; align-items: center;
@@ -251,13 +262,18 @@ def build_html(cards: list[dict[str, str]], title: str, language: str) -> str:
       .flip-card.revealed .face.back {{ opacity: 1; }}
     }}
     .review-buttons {{ display:grid; grid-template-columns: repeat(4, 1fr); gap: 10px; margin: 14px 0; }}
+    .review-buttons button.selected {{ outline: 3px solid rgba(20,32,51,.18); transform: translateY(-2px); box-shadow: 0 14px 26px rgba(15,23,42,.18); }}
     .nav {{ display:flex; justify-content: space-between; gap: 10px; margin-top: 14px; }}
     .progressbar {{ height: 10px; background: rgba(99,112,131,.18); border-radius: 999px; overflow:hidden; margin-top: 12px; }}
     .progressbar span {{ display:block; height:100%; width:0%; background: linear-gradient(90deg, var(--primary), var(--primary2)); transition: width .25s; }}
     .list-panel {{ padding: 14px; max-height: 700px; overflow: auto; }}
     .list-title {{ font-weight: 900; margin: 4px 4px 12px; }}
-    .item {{ border: 1px solid rgba(99,112,131,.16); background: #fff; border-radius: 16px; padding: 12px; margin-bottom: 10px; cursor:pointer; }}
+    .item {{ border: 1px solid rgba(99,112,131,.16); background: #fff; border-radius: 16px; padding: 12px; margin-bottom: 10px; cursor:pointer; transition: border-color .2s ease, background .2s ease, transform .2s ease; }}
     .item.active {{ border-color: var(--primary); box-shadow: 0 0 0 3px rgba(37,99,235,.10); }}
+    .item.score-1 {{ border-left: 5px solid var(--danger); background: #fff7f7; }}
+    .item.score-2 {{ border-left: 5px solid var(--accent); background: #fffbeb; }}
+    .item.score-3 {{ border-left: 5px solid var(--primary2); background: #f0fdfa; }}
+    .item.score-4 {{ border-left: 5px solid var(--primary); background: #eff6ff; }}
     .item .front {{ font-weight: 750; line-height: 1.35; }}
     .item .small {{ color: var(--muted); font-size: 12px; margin-top: 6px; }}
     .empty {{ padding: 60px 18px; text-align:center; color: var(--muted); }}
@@ -324,6 +340,8 @@ function esc(s) {{ return String(s || '').replace(/[&<>"']/g, m => ({{'&':'&amp;
 function optionList(values, label) {{ return '<option value="">' + esc(L.all + ' · ' + label) + '</option>' + values.map(v => '<option value="' + esc(v) + '">' + esc(v) + '</option>').join(''); }}
 function save() {{ localStorage.setItem(STORAGE_KEY, JSON.stringify(progress)); }}
 function scoreOf(id) {{ return progress[id]?.score || 0; }}
+function statusClass(score) {{ return score === 1 ? 'again' : score === 2 ? 'hard' : score === 3 ? 'good' : score === 4 ? 'easy' : 'unreviewed'; }}
+function statusLabel(score) {{ return score === 1 ? L.again : score === 2 ? L.hard : score === 3 ? L.good : score === 4 ? L.easy : L.unreviewed; }}
 function isWeak(card) {{ return progress[card.ID] && progress[card.ID].score <= 2; }}
 function textOf(card) {{ return [card.ID, card.Front, card.Back, card.Chapter, card.Topic, card.Difficulty, card.CardType, card.Tags].join(' ').toLowerCase(); }}
 
@@ -383,7 +401,18 @@ function updateCurrentProgressMeta() {{
   const card = filtered[index];
   const p = card ? (progress[card.ID] || {{reviews:0, score:0}}) : {{reviews:0, score:0}};
   const reviewMeta = $('reviewMeta');
+  const statusMeta = $('statusMeta');
+  const flipCard = $('flipCard');
   if (reviewMeta) reviewMeta.textContent = 'reviews: ' + (p.reviews || 0);
+  if (statusMeta) {{
+    statusMeta.textContent = statusLabel(p.score || 0);
+    statusMeta.className = 'pill status ' + statusClass(p.score || 0);
+  }}
+  if (flipCard) {{
+    flipCard.classList.remove('answered-again', 'answered-hard', 'answered-good', 'answered-easy');
+    if (p.score) flipCard.classList.add('answered-' + statusClass(p.score));
+  }}
+  document.querySelectorAll('[data-score]').forEach(btn => btn.classList.toggle('selected', Number(btn.dataset.score) === (p.score || 0)));
   renderStats();
   renderList();
 }}
@@ -398,14 +427,17 @@ function render() {{
   }}
   const card = filtered[index];
   const p = progress[card.ID] || {{reviews:0, score:0}};
+  const currentStatusClass = statusClass(p.score || 0);
+  const answeredClass = p.score ? ' answered-' + currentStatusClass : '';
   panel.innerHTML = `
     <div class="meta">
       <span class="pill">${{esc(card.ID)}}</span>
       <span class="pill green">${{esc(card.Chapter || '—')}}</span>
       <span class="pill orange">${{esc(card.Difficulty || '—')}}</span>
       <span class="pill">${{esc(card.CardType || '—')}}</span>
+      <span class="pill status ${{currentStatusClass}}" id="statusMeta">${{esc(statusLabel(p.score || 0))}}</span>
     </div>
-    <div class="flip-card ${{revealed ? 'revealed' : ''}}" id="flipCard">
+    <div class="flip-card ${{revealed ? 'revealed' : ''}}${{answeredClass}}" id="flipCard">
       <div class="flip-inner">
         <div class="face front"><div class="face-label">${{esc(L.front)}}</div><div class="content">${{esc(card.Front)}}</div></div>
         <div class="face back"><div class="face-label">${{esc(L.back)}}</div><div class="content">${{esc(card.Back)}}</div></div>
@@ -413,10 +445,10 @@ function render() {{
     </div>
     <button id="flipBtn">${{revealed ? esc(L.hideAnswer) : esc(L.showAnswer)}}</button>
     <div class="review-buttons">
-      <button class="danger" data-score="1">1 · ${{esc(L.again)}}</button>
-      <button class="warn" data-score="2">2 · ${{esc(L.hard)}}</button>
-      <button class="good" data-score="3">3 · ${{esc(L.good)}}</button>
-      <button data-score="4">4 · ${{esc(L.easy)}}</button>
+      <button class="danger ${{p.score === 1 ? 'selected' : ''}}" data-score="1">1 · ${{esc(L.again)}}</button>
+      <button class="warn ${{p.score === 2 ? 'selected' : ''}}" data-score="2">2 · ${{esc(L.hard)}}</button>
+      <button class="good ${{p.score === 3 ? 'selected' : ''}}" data-score="3">3 · ${{esc(L.good)}}</button>
+      <button class="${{p.score === 4 ? 'selected' : ''}}" data-score="4">4 · ${{esc(L.easy)}}</button>
     </div>
     <div class="meta"><span class="pill">${{esc(card.Topic || '')}}</span><span class="pill">${{esc(card.Tags || '')}}</span><span class="pill" id="reviewMeta">reviews: ${{p.reviews || 0}}</span></div>
     <div class="progressbar"><span style="width:${{Math.round((index + 1) / filtered.length * 100)}}%"></span></div>
@@ -431,12 +463,14 @@ function render() {{
 }}
 
 function renderList() {{
-  $('cardList').innerHTML = filtered.map((card, i) => `
-    <div class="item ${{i === index ? 'active' : ''}}" data-i="${{i}}">
+  $('cardList').innerHTML = filtered.map((card, i) => {{
+    const score = scoreOf(card.ID);
+    return `
+    <div class="item ${{i === index ? 'active' : ''}} score-${{score}}" data-i="${{i}}">
       <div class="front">${{esc(card.Front).slice(0, 120)}}${{card.Front.length > 120 ? '…' : ''}}</div>
-      <div class="small">${{esc(card.Chapter || '—')}} · ${{esc(card.Topic || '—')}} · score ${{scoreOf(card.ID)}}</div>
-    </div>
-  `).join('');
+      <div class="small">${{esc(card.Chapter || '—')}} · ${{esc(card.Topic || '—')}} · ${{esc(statusLabel(score))}}</div>
+    </div>`;
+  }}).join('');
   document.querySelectorAll('.item').forEach(el => el.onclick = () => {{ index = Number(el.dataset.i); revealed = false; render(); }});
 }}
 
@@ -451,12 +485,8 @@ function grade(score) {{
   const card = filtered[index];
   progress[card.ID] = {{reviews: (progress[card.ID]?.reviews || 0) + 1, score, lastReviewed: new Date().toISOString()}};
   save();
-  if (score === 1) {{
-    setRevealed(true);
-    updateCurrentProgressMeta();
-    return;
-  }}
-  move(1);
+  if (score === 1) setRevealed(true);
+  updateCurrentProgressMeta();
 }}
 
 function shuffle() {{
