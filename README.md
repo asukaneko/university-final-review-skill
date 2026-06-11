@@ -1,19 +1,19 @@
 # University Final Review Skill
 
-A bilingual AI skill for turning university course materials into structured final-exam review resources.
+A bilingual, cross-disciplinary AI skill for turning university course materials into structured final-exam review resources.
 
-This repository provides a reusable skill workflow for students who need to transform PPT slides, lecture notes, assignments, syllabus documents, screenshots, or past papers into exam-oriented study materials.
+This repository provides a reusable skill workflow for students who need to transform PPT slides, lecture notes, assignments, syllabus documents, screenshots, lab materials, case materials, or past papers into exam-oriented study materials.
 
-It is designed for courses such as:
+It is designed for a broad range of university disciplines:
 
-- Computer Science fundamentals
-- Operating Systems
-- Algorithms and Data Structures
-- Database Systems
-- Computer Networks
-- Software Engineering
-- Political theory / history / general education courses
-- Any lecture-based university course with slides or notes
+- Computer Science and Engineering
+- Natural Sciences and Mathematics
+- Medicine, Nursing, Pharmacy, and Public Health
+- Law and Legal Studies
+- Humanities: history, philosophy, literature, languages
+- Social Sciences: politics, sociology, psychology, communication
+- Business, Economics, Accounting, and Management
+- Education, Arts, Design, and General Education courses
 
 ## What it generates
 
@@ -23,7 +23,8 @@ The skill can generate:
 - Exam point prediction
 - Question banks with answers and explanations
 - Memorization outlines
-- Calculation / algorithm problem walkthroughs
+- Calculation, proof, experiment, case-analysis, or clinical-reasoning walkthroughs
+- Discipline-specific review templates
 - Final sprint checklists
 - Full mock exams with scoring rubrics
 
@@ -36,6 +37,16 @@ The skill can generate:
 ├── docs/
 │   ├── en/
 │   │   ├── README.md
+│   │   ├── categories/
+│   │   │   ├── README.md
+│   │   │   ├── stem-engineering.md
+│   │   │   ├── natural-sciences.md
+│   │   │   ├── medicine-health.md
+│   │   │   ├── law.md
+│   │   │   ├── humanities.md
+│   │   │   ├── social-sciences.md
+│   │   │   ├── business-economics.md
+│   │   │   └── education-arts.md
 │   │   ├── overall-workflow.md
 │   │   ├── deep-lecture-notes.md
 │   │   ├── exam-point-predictor.md
@@ -45,6 +56,16 @@ The skill can generate:
 │   │   └── output-format.md
 │   └── zh-CN/
 │       ├── README.md
+│       ├── categories/
+│       │   ├── README.md
+│       │   ├── stem-engineering.md
+│       │   ├── natural-sciences.md
+│       │   ├── medicine-health.md
+│       │   ├── law.md
+│       │   ├── humanities.md
+│       │   ├── social-sciences.md
+│       │   ├── business-economics.md
+│       │   └── education-arts.md
 │       ├── overall-workflow.md
 │       ├── deep-lecture-notes.md
 │       ├── exam-point-predictor.md
@@ -67,6 +88,19 @@ The skill can generate:
 - English documentation: [`docs/en/README.md`](docs/en/README.md)
 - 中文文档：[`docs/zh-CN/README.md`](docs/zh-CN/README.md)
 
+## Discipline categories
+
+| Category | English | 中文 |
+| --- | --- | --- |
+| Computer Science / Engineering | [`docs/en/categories/stem-engineering.md`](docs/en/categories/stem-engineering.md) | [`docs/zh-CN/categories/stem-engineering.md`](docs/zh-CN/categories/stem-engineering.md) |
+| Natural Sciences / Mathematics | [`docs/en/categories/natural-sciences.md`](docs/en/categories/natural-sciences.md) | [`docs/zh-CN/categories/natural-sciences.md`](docs/zh-CN/categories/natural-sciences.md) |
+| Medicine / Health | [`docs/en/categories/medicine-health.md`](docs/en/categories/medicine-health.md) | [`docs/zh-CN/categories/medicine-health.md`](docs/zh-CN/categories/medicine-health.md) |
+| Law | [`docs/en/categories/law.md`](docs/en/categories/law.md) | [`docs/zh-CN/categories/law.md`](docs/zh-CN/categories/law.md) |
+| Humanities | [`docs/en/categories/humanities.md`](docs/en/categories/humanities.md) | [`docs/zh-CN/categories/humanities.md`](docs/zh-CN/categories/humanities.md) |
+| Social Sciences | [`docs/en/categories/social-sciences.md`](docs/en/categories/social-sciences.md) | [`docs/zh-CN/categories/social-sciences.md`](docs/zh-CN/categories/social-sciences.md) |
+| Business / Economics | [`docs/en/categories/business-economics.md`](docs/en/categories/business-economics.md) | [`docs/zh-CN/categories/business-economics.md`](docs/zh-CN/categories/business-economics.md) |
+| Education / Arts / Design | [`docs/en/categories/education-arts.md`](docs/en/categories/education-arts.md) | [`docs/zh-CN/categories/education-arts.md`](docs/zh-CN/categories/education-arts.md) |
+
 ## Basic usage
 
 Copy this repository into a supported skill directory, or keep it as a reusable prompt/skill library.
@@ -80,7 +114,7 @@ Use the university final review skill. Read the uploaded Chapter 1-5 slides and 
 For Chinese courses:
 
 ```text
-请使用大学期末复习 Skill，查看我上传的第 1-5 章 PPT，生成详细复习资料，包括逐章讲义、考点预测、题库、背诵提纲和一套 100 分模拟卷。
+请使用大学期末复习 Skill，查看我上传的第 1-5 章 PPT，按对应学科大类生成详细复习资料，包括逐章讲义、考点预测、题库、背诵提纲和一套 100 分模拟卷。
 ```
 
 ## Skill modules
@@ -88,11 +122,12 @@ For Chinese courses:
 | Module | Purpose |
 | --- | --- |
 | Overall Workflow | Converts raw course materials into a complete review pipeline. |
+| Discipline Categories | Applies discipline-specific review patterns. |
 | Deep Lecture Notes | Produces detailed chapter-by-chapter notes. |
 | Exam Point Predictor | Estimates likely exam topics and question forms. |
 | Question Bank Generator | Creates questions, answers, explanations, and rubrics. |
 | Memorization Outline | Produces compact material for recitation and last-minute review. |
-| Calculation / Algorithm Coach | Explains calculation, scheduling, database, network, and algorithm problems step by step. |
+| Calculation / Algorithm Coach | Explains calculation, proof, scheduling, database, network, and algorithm problems step by step. |
 
 ## Scripts
 
