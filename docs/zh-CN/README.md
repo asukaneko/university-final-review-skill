@@ -13,10 +13,12 @@
 3. [深度讲义生成](deep-lecture-notes.md)
 4. [考点预测](exam-point-predictor.md)
 5. [题库生成](question-bank-generator.md)
-6. [背诵提纲](memorization-outline.md)
-7. [学科专属解题 / 分析教练](problem-solving-coach.md)
-8. [输出格式](output-format.md)
-9. [DOCX 文档排版指南](docx-style-guide.md)
+6. [测试卡片](test-cards.md)
+7. [精准模拟卷](precision-mock-exam.md)
+8. [背诵提纲](memorization-outline.md)
+9. [学科专属解题 / 分析教练](problem-solving-coach.md)
+10. [输出格式](output-format.md)
+11. [DOCX 文档排版指南](docx-style-guide.md)
 
 ## 学科大类指南
 

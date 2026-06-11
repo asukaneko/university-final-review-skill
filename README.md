@@ -54,6 +54,8 @@ The skill can generate:
 │   │   ├── deep-lecture-notes.md
 │   │   ├── exam-point-predictor.md
 │   │   ├── question-bank-generator.md
+│   │   ├── test-cards.md
+│   │   ├── precision-mock-exam.md
 │   │   ├── memorization-outline.md
 │   │   ├── problem-solving-coach.md
 │   │   ├── docx-style-guide.md
@@ -75,6 +77,8 @@ The skill can generate:
 │       ├── deep-lecture-notes.md
 │       ├── exam-point-predictor.md
 │       ├── question-bank-generator.md
+│       ├── test-cards.md
+│       ├── precision-mock-exam.md
 │       ├── memorization-outline.md
 │       ├── problem-solving-coach.md
 │       ├── docx-style-guide.md
@@ -136,6 +140,8 @@ For Chinese courses:
 | Deep Lecture Notes | Produces detailed chapter-by-chapter notes. |
 | Exam Point Predictor | Estimates likely exam topics and question forms. |
 | Question Bank Generator | Creates questions, answers, explanations, and rubrics. |
+| Test Cards | Produces active-recall flashcards, cloze cards, comparison cards, error-correction cards, and transfer cards. |
+| Precision Mock Exam | Builds blueprint-driven 100-point mock exams with calibrated topic weights, answer keys, and scoring rubrics. |
 | Memorization Outline | Produces compact material for recitation and last-minute review. |
 | Problem-Solving Coach | Provides discipline-specific reasoning templates for calculation, proof, experiment analysis, legal cases, clinical reasoning, essays, business cases, and design critique. |
 | DOCX Style Guide | Defines polished Word-document formatting for printable review handouts. |

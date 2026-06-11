@@ -13,10 +13,12 @@ The skill helps transform university course materials into exam-ready review res
 3. [Deep Lecture Notes](deep-lecture-notes.md)
 4. [Exam Point Predictor](exam-point-predictor.md)
 5. [Question Bank Generator](question-bank-generator.md)
-6. [Memorization Outline](memorization-outline.md)
-7. [Discipline Problem-Solving Coach](problem-solving-coach.md)
-8. [Output Format](output-format.md)
-9. [DOCX Style Guide](docx-style-guide.md)
+6. [Test Cards](test-cards.md)
+7. [Precision Mock Exam](precision-mock-exam.md)
+8. [Memorization Outline](memorization-outline.md)
+9. [Discipline Problem-Solving Coach](problem-solving-coach.md)
+10. [Output Format](output-format.md)
+11. [DOCX Style Guide](docx-style-guide.md)
 
 ## Discipline category guides
 

@@ -38,7 +38,7 @@ Use the most relevant category guide when generating the review package:
 3. Extract the chapter structure and major concepts from the user-provided files.
 4. Generate deep lecture notes for each chapter.
 5. Identify high-priority exam points and likely question types.
-6. Generate a chapter-based question bank with answers and explanations.
+6. Generate a chapter-based question bank with answers and explanations; include active-recall test cards using `docs/en/test-cards.md` or `docs/zh-CN/test-cards.md` when a complete package is requested.
 7. Produce memorization outlines and last-minute checklists.
 8. Provide discipline-specific worked examples where relevant, using `docs/en/problem-solving-coach.md` or `docs/zh-CN/problem-solving-coach.md`:
    - calculation, proof, derivation, coding, or system design for STEM courses;
@@ -50,7 +50,7 @@ Use the most relevant category guide when generating the review package:
    - model-financial-case analysis for business and economics;
    - lesson-plan, critique, or portfolio review for education, arts, and design.
 9. If the user requests DOCX / Word output, apply the DOCX style guide instead of producing an unstyled plain document.
-10. Generate a complete mock exam if requested.
+10. Generate a blueprint-driven precision mock exam using `docs/en/precision-mock-exam.md` or `docs/zh-CN/precision-mock-exam.md` if requested or when a complete package is requested.
 
 ## Documentation
 
@@ -68,6 +68,8 @@ Recommended references:
 - `docs/en/deep-lecture-notes.md`
 - `docs/en/exam-point-predictor.md`
 - `docs/en/question-bank-generator.md`
+- `docs/en/test-cards.md`
+- `docs/en/precision-mock-exam.md`
 - `docs/en/memorization-outline.md`
 - `docs/en/output-format.md`
 - `docs/zh-CN/overall-workflow.md`
@@ -78,6 +80,8 @@ Recommended references:
 - `docs/zh-CN/deep-lecture-notes.md`
 - `docs/zh-CN/exam-point-predictor.md`
 - `docs/zh-CN/question-bank-generator.md`
+- `docs/zh-CN/test-cards.md`
+- `docs/zh-CN/precision-mock-exam.md`
 - `docs/zh-CN/memorization-outline.md`
 - `docs/zh-CN/output-format.md`
 
@@ -102,8 +106,10 @@ When the user asks for a complete review package, include:
 3. Chapter-by-chapter deep notes
 4. Exam point prediction
 5. Question bank
-6. Memorization outline
-7. Discipline-specific worked examples and analysis templates where applicable
-8. Final sprint checklist
-9. Optional polished DOCX handout using the style guide
-10. 100-point mock exam with answer key and scoring rubric
+6. Test cards for active recall
+7. Memorization outline
+8. Discipline-specific worked examples and analysis templates where applicable
+9. Error log and weak-point repair plan
+10. Final sprint checklist
+11. Optional polished DOCX handout using the style guide
+12. Blueprint-driven 100-point precision mock exam with answer key, partial-credit rubric, and post-exam diagnosis

@@ -73,3 +73,39 @@ When needed, mark content as:
 - `From uploaded material`
 - `Inferred exam focus`
 - `Supplementary background`
+
+
+## Complete review package
+
+When the user asks for a rich or complete output, include:
+
+1. Course and exam-scope overview.
+2. Discipline category and review strategy.
+3. Evidence-based study plan.
+4. Chapter-by-chapter deep notes.
+5. High-yield exam-point map.
+6. Concept comparison tables and formula/rule sheets.
+7. Chapter question bank with answers and explanations.
+8. Test cards for active recall; see [`test-cards.md`](test-cards.md).
+9. Worked examples or model answers.
+10. Error log and weak-point repair plan.
+11. Precision 100-point mock exam; see [`precision-mock-exam.md`](precision-mock-exam.md).
+12. Final sprint checklist.
+
+## Precision mock exam output
+
+A mock exam should include:
+
+- exam blueprint table;
+- total score and duration;
+- section instructions;
+- questions with marks and expected time;
+- answer key;
+- detailed rubrics;
+- partial-credit guidance;
+- common traps;
+- post-exam diagnosis by chapter and skill.
+
+## Test card output
+
+Test cards should be grouped by chapter and card type. Include ID, front, back, chapter, topic, difficulty, card type, and tags.
