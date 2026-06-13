@@ -19,15 +19,15 @@ It is designed for a broad range of university disciplines:
 
 The skill can generate:
 
-- Deep chapter-by-chapter lecture notes
-- Exam point prediction
-- Question banks with answers and explanations
-- Memorization outlines
+- Deep chapter-by-chapter lecture notes with discipline-specific structure
+- Exam point prediction with priority ranking (must-know / high-frequency / low-frequency easy)
+- Question banks with 4 difficulty levels, scoring rubrics, and common error analysis
+- Test cards for active recall (exportable as CSV and interactive HTML)
+- Memorization outlines with multiple memory techniques (keyword chains, mnemonics, acronyms, visual associations)
 - Discipline-specific problem-solving and analysis templates
-- Calculation, proof, experiment, case-analysis, clinical-reasoning, essay-planning, or design-critique walkthroughs
 - Polished DOCX / Word review handouts
-- Final sprint checklists
-- Full mock exams with scoring rubrics
+- Standardized mock exams in landscape A4 format with answer keys and scoring rubrics
+- Post-exam diagnosis analysis (by chapter and cognitive level)
 
 ## Repository layout
 
@@ -87,13 +87,12 @@ The skill can generate:
 │   └── final-review-request.md
 ├── examples/
 │   ├── review_content.sample.json
-│   └── test_cards.sample.csv
+│   ├── test_cards.sample.csv
+│   └── mock_exam_os.sample.json
 ├── scripts/
 │   ├── generate_styled_docx.py
 │   ├── generate_test_cards_html.py
-│   ├── build_review_plan.py
-│   ├── package_skill.py
-│   └── validate_skill.py
+│   └── generate_mock_exam_docx.py
 └── .github/workflows/
     └── validate.yml
 ```
@@ -138,32 +137,32 @@ For Chinese courses:
 | --- | --- |
 | Overall Workflow | Converts raw course materials into a complete review pipeline. |
 | Evidence-Based Study Strategies | Adds active recall, spaced repetition, practice testing, worked examples, interleaving, and error logs. |
-| Discipline Categories | Applies discipline-specific review patterns. |
+| Discipline Categories | Applies discipline-specific review patterns with sub-discipline breakdowns. |
 | Deep Lecture Notes | Produces detailed chapter-by-chapter notes. |
-| Exam Point Predictor | Estimates likely exam topics and question forms. |
-| Question Bank Generator | Creates questions, answers, explanations, and rubrics. |
+| Exam Point Predictor | Estimates likely exam topics and question forms with priority ranking. |
+| Question Bank Generator | Creates questions with standard formats, answers, explanations, and rubrics. |
 | Test Cards | Produces active-recall flashcards, cloze cards, comparison cards, error-correction cards, and transfer cards. |
-| Precision Mock Exam | Builds blueprint-driven 100-point mock exams with calibrated topic weights, answer keys, and scoring rubrics. |
-| Memorization Outline | Produces compact material for recitation and last-minute review. |
+| Precision Mock Exam | Builds standardized mock exams with landscape A4 format, answer keys, scoring rubrics, and post-exam diagnosis. |
+| Memorization Outline | Produces compact material with multiple memory techniques for recitation and last-minute review. |
 | Problem-Solving Coach | Provides discipline-specific reasoning templates for calculation, proof, experiment analysis, legal cases, clinical reasoning, essays, business cases, and design critique. |
 | DOCX Style Guide | Defines polished Word-document formatting for printable review handouts. |
-| Styled DOCX Generator | Converts structured review JSON into a styled Word handout using `python-docx`. |
+| Mock Exam DOCX Generator | Generates standardized mock exam DOCX files in landscape A4 format with answer keys. |
 
 ## Scripts
 
-Install the DOCX generator dependency:
+Install dependencies:
 
 ```bash
 pip install -r requirements.txt
 ```
 
-Generate a styled DOCX handout from the sample JSON:
+### Generate a styled review handout DOCX
 
 ```bash
 python scripts/generate_styled_docx.py --input examples/review_content.sample.json --output output/final_review.docx
 ```
 
-Generate a standalone HTML test-card review interface from CSV:
+### Generate an interactive test card HTML
 
 ```bash
 python scripts/generate_test_cards_html.py \
@@ -173,25 +172,20 @@ python scripts/generate_test_cards_html.py \
   --language en
 ```
 
-The generated HTML works offline and includes search, filters, flip-card review, keyboard shortcuts, self-rating, weak-card review, progress statistics, and localStorage-based progress tracking.
-
-Validate the repository structure:
+### Generate a mock exam DOCX (landscape A4)
 
 ```bash
-python scripts/validate_skill.py
+python scripts/generate_mock_exam_docx.py \
+  --input examples/mock_exam_os.sample.json \
+  --output output/mock_exam_os.docx
 ```
 
-Build a simple review plan:
-
-```bash
-python scripts/build_review_plan.py --course "Operating Systems" --chapters "1-5" --language zh-CN
-```
-
-Package the skill into a zip file:
-
-```bash
-python scripts/package_skill.py
-```
+The mock exam DOCX includes:
+- Landscape A4 layout with professional formatting
+- Course header, exam title, duration, and instructions
+- Standardized question sections (MCQ, fill-in, true/false, definitions, short answer, calculation, comprehensive)
+- Complete answer key with scoring rubrics
+- Post-exam diagnosis analysis by chapter and cognitive level
 
 ## License
 
