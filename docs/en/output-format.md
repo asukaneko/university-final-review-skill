@@ -1,110 +1,110 @@
 # Output Format
 
-Use clear and exam-oriented Markdown. If the user asks for DOCX / Word output, also follow the layout rules in [`docx-style-guide.md`](docx-style-guide.md).
+Output should use clear, study-friendly Markdown structure. If the user requests DOCX / Word output, also refer to the formatting guidelines in [`docx-style-guide.md`](docx-style-guide.md).
 
 ## Recommended chapter format
 
 ```markdown
 ## Chapter N: Title
 
-### 1. Chapter overview
+### 1. Chapter Overview
 
-### 2. Core concepts
+### 2. Core Concepts
 
-### 3. Key mechanisms / formulas / algorithms
+### 3. Key Mechanisms / Formulas / Algorithms
 
-### 4. Exam points
+### 4. Exam Point Analysis
 
-### 5. Common question types
+### 5. Common Question Types
 
-### 6. Mistake-prone points
+### 6. Common Errors
 
-### 7. One-page quick review
+### 7. One-Page Speed Notes
 
-### 8. Practice questions
+### 8. Practice Problems
 ```
 
-## Tables
+## Table usage scenarios
 
-Use tables for:
+The following content should use tables:
 
-- Concept comparisons
-- Exam priority ranking
+- Concept comparison
+- Exam point priority ranking
 - Question type mapping
-- Formula summaries
-- Error-prone details
-- Case-analysis structures
+- Formula summary
+- Common error details
+- Case analysis structure
 - Clinical reasoning chains
-- Legal rule elements
+- Legal elements
+- Framework quick reference
 
 ## Mock exam format
 
 A complete mock exam should include:
 
 - Total score: 100 points
-- Suggested duration
-- Question sections
-- Point values
-- Answer key
-- Scoring rubric
+- Suggested time allocation
+- Question type distribution
+- Points per question
+- Standard answers
+- Scoring criteria
 
 ## DOCX output format
 
-When generating a DOCX document, prefer these layout elements:
+When generating DOCX, prefer these formatting elements:
 
 - Centered course title and chapter title
-- Header with course name, chapter, or topic
-- Footer with material type, page number, or review-note label
-- Light-blue main-thread callout box
-- Learning objective list
+- Header: course name, chapter name, or topic
+- Footer: material type, page number, or "Study Notes & Exam Review"
+- Light blue "Chapter Main Thread" box
+- Learning objectives list
 - Table of contents
-- Concept and exam-focus tables with dark-blue headers
-- Pale-yellow notice boxes
-- Pale-red mistake-prone boxes
-- Light-gray formula, code, or example blocks
-- Page breaks between major chapters
+- Dark blue header concept and exam point tables
+- Light yellow "Note" box
+- Light red "Common Errors" box
+- Light gray formula, code, or example blocks
+- Appropriate page breaks between chapters
 
-See [`docx-style-guide.md`](docx-style-guide.md) for detailed visual rules.
+See [`docx-style-guide.md`](docx-style-guide.md) for detailed visual specifications.
 
-## Grounding labels
+## Content labeling
 
-When needed, mark content as:
+When necessary, label content sources:
 
-- `From uploaded material`
-- `Inferred exam focus`
-- `Supplementary background`
-
+- `来自上传资料` / `From uploaded materials`
+- `基于资料推测的考点` / `Exam points inferred from materials`
+- `补充背景知识` / `Supplementary background`
 
 ## Complete review package
 
-When the user asks for a rich or complete output, include:
+When the user requests "rich" or "complete" output, include:
 
-1. Course and exam-scope overview.
+1. Course and exam scope overview.
 2. Discipline category and review strategy.
-3. Evidence-based study plan.
+3. Evidence-based study plan with spaced repetition schedule.
 4. Chapter-by-chapter deep notes.
-5. High-yield exam-point map.
-6. Concept comparison tables and formula/rule sheets.
-7. Chapter question bank with answers and explanations.
-8. Test cards for active recall; see [`test-cards.md`](test-cards.md).
+5. High-yield exam point map.
+6. Concept comparison tables, formula/rule summaries.
+7. Chapter question bank with answers and explanations (4 difficulty levels).
+8. Test cards for active recall, see [`test-cards.md`](test-cards.md).
 9. Worked examples or model answers.
 10. Error log and weak-point repair plan.
-11. Precision 100-point mock exam; see [`precision-mock-exam.md`](precision-mock-exam.md).
-12. Final sprint checklist.
+11. Precision 100-point mock exam, see [`precision-mock-exam.md`](precision-mock-exam.md).
+12. Final sprint checklist with time allocation advice.
 
 ## Precision mock exam output
 
-A mock exam should include:
+The mock exam should include:
 
-- exam blueprint table;
-- total score and duration;
-- section instructions;
-- questions with marks and expected time;
-- answer key;
-- detailed rubrics;
-- partial-credit guidance;
-- common traps;
-- post-exam diagnosis by chapter and skill.
+- Exam blueprint table
+- Total score and duration
+- Section instructions
+- Questions with points and estimated time
+- Standard answers
+- Detailed rubric
+- Partial-credit notes
+- Common traps
+- Post-exam diagnosis by chapter and ability dimension
 
 ## Test card output
 

@@ -1,95 +1,133 @@
 # Natural Sciences / Mathematics
 
-Use this guide for mathematics, statistics, physics, chemistry, biology, environmental science, astronomy, geology, and related theoretical or empirical science courses.
+Applies to mathematics, statistics, physics, chemistry, biology, environmental science, astronomy, geology, and other theoretical or experimental science courses.
+
+## Sub-discipline lookup
+
+| Sub-discipline | Typical courses | Key question types |
+| --- | --- | --- |
+| Mathematics | Calculus, Linear Algebra, Probability, Discrete Math | Proofs, derivations, calculations, applications |
+| Physics | Mechanics, Thermodynamics, E&M, Optics, Quantum | Experiment analysis, formula derivation, graph interpretation |
+| Chemistry | Organic, Inorganic, Analytical, Physical Chemistry | Reaction mechanisms, experiment design, data analysis |
+| Biology | Molecular Bio, Cell Bio, Genetics, Ecology | Mechanism explanation, experiment design, chart analysis |
+| Statistics | Probability, Mathematical Stats, Applied Stats | Hypothesis testing, regression, result interpretation |
+| Environmental/Geology | Environmental Science, Geology, Meteorology | Data interpretation, process analysis, policy recommendations |
 
 ## Review goal
 
-Build a connected understanding of principles, models, evidence, formulas, proofs, mechanisms, and experimental reasoning so the student can solve unfamiliar problems, explain phenomena, and interpret data.
+Build connected understanding of principles, models, evidence, formulas, proofs, mechanisms, and experimental reasoning so students can solve unfamiliar problems, explain phenomena, and interpret data.
 
 ## What to extract from materials
 
-- Laws, theorems, principles, models, definitions, and classification systems.
-- Formula derivations, assumptions, domains of validity, units, and limiting cases.
-- Proof structures, lemmas, common transformations, and standard techniques.
-- Biological/chemical/physical mechanisms, pathways, reactions, cycles, and causal chains.
-- Experimental designs, variables, controls, instruments, graphs, statistical tests, and error sources.
-- Worked examples, tutorial sheets, lab reports, and past-paper problem styles.
+- Laws, theorems, principles, models, definitions, classification systems.
+- Formula derivations, assumptions, applicable ranges, units, limiting cases.
+- Proof structures, lemmas, common transformations, standard techniques.
+- Biological/chemical/physical mechanisms, pathways, reactions, cycles, causal chains.
+- Experimental design, variables, controls, instruments, charts, statistical tests, error sources.
+- Worked examples, problem sets, lab reports, past paper styles.
 
 ## Chapter note structure
 
-1. **Big idea**: the scientific question or mathematical problem addressed.
-2. **Concept map**: principles, models, variables, and dependencies.
-3. **Definitions and assumptions**: exact meaning and scope.
-4. **Formula/theorem sheet**: statement, symbols, units, assumptions, when not to use.
-5. **Mechanism/proof path**: step-by-step causal or logical sequence.
-6. **Graph/data interpretation**: axes, trends, outliers, uncertainty, conclusion.
-7. **Worked examples**: basic, exam-level, and conceptual trap.
-8. **Experiment/lab connection**: controls, variables, method, result, limitation.
-9. **Common misconceptions**: false intuitions, sign/unit mistakes, correlation-causation errors.
-10. **Practice questions**: conceptual, quantitative, proof/mechanism, data interpretation.
+1. **Core question**: What scientific or mathematical question does this chapter answer.
+2. **Concept map**: Principles, models, variables, dependencies.
+3. **Definitions and assumptions**: Precise definitions and applicable ranges.
+4. **Formula/theorem table**: Statements, symbols, units, assumptions, when NOT to use.
+5. **Mechanism/proof pathway**: Causal or logical chains.
+6. **Graph/data interpretation**: Axes, trends, anomalies, errors, conclusions.
+7. **Worked examples**: Basic, exam-level, conceptual trap cases.
+8. **Experiment connection**: Controls, variables, methods, results, limitations.
+9. **Common misconceptions**: Intuition errors, symbol/unit errors, correlation ≠ causation.
+10. **Practice problems**: Conceptual, quantitative, proof/mechanism, data interpretation.
 
-## Typical exam question types
+## Common question types
 
-- Define, compare, classify, or explain a principle/mechanism.
-- Derive or manipulate formulas and prove results.
-- Solve quantitative problems with units and assumptions.
-- Interpret graphs, tables, spectra, diagrams, microscopy images, or lab data.
-- Explain experimental design, controls, validity, reliability, and error.
-- Apply a theorem/model/mechanism to a novel situation.
+- Define, compare, classify, or explain principles/mechanisms.
+- Derivation, formula transformation, proof.
+- Quantitative calculation with units and assumptions.
+- Interpret graphs, tables, spectra, micrographs, experimental data.
+- Explain experimental design, controls, validity, reliability, errors.
+- Apply theorems/models/mechanisms to new situations.
 
 ## Problem-solving templates
 
 ### Quantitative science problem
 
-1. Identify the phenomenon, system, and model.
-2. List knowns, unknowns, units, assumptions, and constants.
-3. Choose equations and justify applicability.
-4. Solve symbolically before substituting when possible.
+1. Identify phenomenon, system, and model.
+2. List knowns, unknowns, units, assumptions, constants.
+3. Choose equation and justify applicability.
+4. Solve symbolically first if possible.
 5. Track units and significant figures.
-6. Interpret the result physically or biologically.
+6. Interpret result in physical/biological/chemical terms.
 
-### Proof / theorem problem
+### Proof / Theorem problem
 
-1. State what must be shown.
-2. List definitions, assumptions, and known theorems.
-3. Choose proof strategy: direct, contradiction, induction, construction, counterexample.
-4. Execute steps with reasons, not just algebra.
+1. State clearly what is to be proved.
+2. List definitions, assumptions, available theorems.
+3. Choose strategy: direct, contradiction, induction, construction, counterexample.
+4. Write reason for each step, not just algebraic manipulation.
 5. Check boundary cases and conclusion.
 
-### Experimental/data question
+### Experiment / Data problem
 
-Use: **Question → Hypothesis → Variables/controls → Method → Data pattern → Conclusion → Limitation**.
+Use: **Question → Hypothesis → Variables/Controls → Method → Data pattern → Conclusion → Limitations**.
+
+### Graph interpretation problem
+
+1. Identify graph type (coordinate plot, spectrum, micrograph, etc.).
+2. Label axes, units, scale.
+3. Describe key features (peaks, inflection points, anomalies).
+4. Explain scientific meaning of features.
+5. Connect to theoretical model.
+
+### Mechanism explanation problem
+
+1. Describe starting point and endpoint of process.
+2. List intermediate steps, explaining causality at each.
+3. Mark key enzymes, molecules, forces, or energy conversions.
+4. Support with arrow diagrams or flowcharts.
 
 ## Question bank rules
 
-Generate:
+Suggested ratio:
 
-- 20% definition and conceptual comparison.
-- 25% calculation or formula manipulation.
+- 20% definitions and concept comparison.
+- 25% calculation or formula transformation.
 - 20% proof, derivation, or mechanism explanation.
 - 20% graph/data/experiment interpretation.
-- 15% integrative application questions.
+- 15% comprehensive application.
 
-Answers must explain assumptions, units, reasoning, and why tempting alternatives are wrong.
+Answers must explain assumptions, units, reasoning, and why common wrong answers are wrong.
 
-## High-yield exam prediction signals
+## High-yield exam point signals
 
-Prioritize topics that:
+Prioritize:
 
-- Connect multiple chapters or explain many phenomena.
-- Have formulas/theorems with clear problem-solving procedures.
-- Appear in labs, tutorials, and assignments.
-- Are shown through diagrams, graphs, mechanisms, or derivations.
-- Have common misconception potential.
+- Content that connects multiple chapters or explains multiple phenomena.
+- Formulas/theorems with clear solution steps.
+- Content appearing in experiments, exercises, assignments.
+- Content presented through graphs, mechanisms, derivations, or data.
+- Content likely to cause misunderstanding.
 
-## Active study plan
+## Active review methods
 
-- Convert formulas/theorems into flashcards with conditions and examples, not just statements.
-- Practice retrieval by redrawing pathways, cycles, diagrams, proofs, and graphs from memory.
-- Use worked examples, then solve near-transfer and far-transfer problems.
-- Interleave problem types to avoid pattern matching.
-- Create a “model selection table” listing when each equation/theorem applies.
+- Make formula/theorem cards with conditions, examples, and counterexamples.
+- Draw pathways, cycles, graphs, proofs, and models from memory.
+- Study worked examples, then do near-transfer and far-transfer problems.
+- Mix problem types to avoid pattern-matching only.
+- Create a "model selection table": when to use each equation/theorem.
+- Proof problems: understand intuition first, then write rigorous proof.
+
+## Common error-prone points
+
+| Error type | Example | Prevention |
+| --- | --- | --- |
+| Symbol/unit confusion | Writing mV as V | Carry units throughout |
+| Significant figures | Writing too many digits | Match least precise input |
+| Correlation ≠ causation | High r means causation | Check experimental design |
+| Proof gaps | Skipping reasoning | Write justification each step |
+| Graph misreading | Reading peak as valley | Label axes first |
+| Assumption omission | Ignoring friction | List all assumptions first |
 
 ## Scoring rubric
 
-Award marks for correct model selection, definitions, assumptions, mathematical/scientific reasoning, intermediate steps, unit/significant-figure accuracy, data interpretation, and conclusion quality.
+Points for: model selection, definition accuracy, assumption statement, mathematical/scientific reasoning, intermediate steps, units and significant figures, data interpretation, conclusion quality.

@@ -1,101 +1,136 @@
 # Computer Science / Engineering
 
-Use this guide for computer science, software engineering, information systems, data science, electronic engineering, mechanical engineering, civil engineering, automation, robotics, and related applied technical courses.
+Applies to computer science, software engineering, information systems, data science, electronics, mechanical engineering, civil engineering, automation, robotics, and other engineering/technology courses.
+
+## Sub-discipline lookup
+
+| Sub-discipline | Typical courses | Key question types |
+| --- | --- | --- |
+| Computer Science | Data Structures, Algorithms, OS, Compilers, Networks | Algorithm tracing, system design, protocol analysis |
+| Software Engineering | Software Eng., Requirements, Testing, Project Mgmt | Design patterns, UML, test cases, case analysis |
+| Data Science | Databases, Data Mining, ML, Statistical Learning | SQL, model selection, tuning, result interpretation |
+| Electronics | Signals & Systems, Digital Circuits, Communications | Waveform analysis, spectrum, circuit calculation |
+| Mechanical Eng. | Materials, Machine Design, Thermodynamics, Controls | Stress analysis, strength check, PID control |
+| Civil Eng. | Structural Mechanics, Soil Mechanics, Concrete Design | Internal force diagrams, bearing capacity, reinforcement |
+| Automation | Control Theory, PLC, Embedded Systems, Robotics | Transfer function, state-space, control design |
 
 ## Review goal
 
-Turn technical material into an exam-ready toolkit: concepts, mechanisms, formulas, algorithms, design trade-offs, lab evidence, and repeatable problem-solving procedures.
+Organize technical materials into an exam-ready toolkit: concepts, mechanisms, formulas, algorithms, engineering tradeoffs, experimental evidence, and repeatable problem-solving procedures.
 
 ## What to extract from materials
 
-- Definitions, models, architectures, and system components.
-- Algorithms, procedures, control flows, protocols, and design patterns.
-- Formulas, derivations, assumptions, units, boundary conditions, and constraints.
-- Complexity, performance, reliability, correctness, safety, cost, and scalability trade-offs.
-- Lab workflows, implementation details, measurement results, error sources, and troubleshooting notes.
-- Assignment patterns, past-paper patterns, and instructor-emphasized examples.
+- Definitions, models, architectures, system components.
+- Algorithms, processes, control logic, protocols, design patterns.
+- Formulas, derivations, assumptions, units, boundary conditions, constraints.
+- Complexity, performance, reliability, correctness, security, cost, and scalability tradeoffs.
+- Experimental procedures, implementation details, measurement results, error sources, troubleshooting.
+- Assignment patterns, past paper patterns, examples the instructor emphasizes.
 
 ## Chapter note structure
 
-1. **Problem context**: what real problem this chapter solves.
-2. **Concept map**: entities, relationships, inputs, outputs, constraints.
-3. **Core definitions**: precise terms with contrast pairs, such as process/thread, stack/heap, stress/strain.
-4. **Mechanism or algorithm**: step-by-step process, pseudocode, diagrams when useful.
-5. **Formula and derivation sheet**: formula, symbols, units, assumptions, common transformations.
-6. **Worked examples**: one basic, one exam-level, one edge case.
-7. **Implementation or lab notes**: code, circuit, setup, data-processing workflow, or debugging checklist.
-8. **Trade-off table**: when to choose method A vs B.
-9. **Common mistakes**: off-by-one errors, unit errors, invalid assumptions, hidden constraints.
-10. **Practice set**: quick checks, medium problems, integrated design/debugging questions.
+1. **Problem context**: What real problem does this chapter solve.
+2. **Knowledge map**: Objects, relationships, inputs, outputs, constraints.
+3. **Core definitions**: Precise definitions and contrast concepts (e.g., process/thread, stack/heap, stress/strain).
+4. **Mechanism or algorithm**: Step-by-step explanation, with pseudocode and diagrams if needed.
+5. **Formula and derivation table**: Formulas, symbols, units, assumptions, common variations.
+6. **Worked examples**: Basic, exam-level, boundary/trap cases.
+7. **Implementation or experiment notes**: Code, circuits, apparatus, data processing or debugging checklist.
+8. **Tradeoff table**: When to choose method A vs method B.
+9. **Common errors**: Off-by-one, units, wrong assumptions, hidden constraints.
+10. **Practice problems**: Quick check, medium, comprehensive design/debug.
 
-## Typical exam question types
+## Common question types
 
-- Definition comparison and short conceptual explanation.
-- Algorithm tracing, time/space complexity, correctness reasoning.
-- Coding, pseudocode, SQL, circuit analysis, CAD/process interpretation, or configuration tasks.
-- Formula substitution, derivation, dimensional analysis, and engineering calculation.
-- System design, architecture choice, fault diagnosis, or performance optimization.
-- Lab interpretation: explain results, identify error sources, improve experiment design.
+- Definition comparison and short-answer explanation.
+- Algorithm tracing, time/space complexity, correctness proof.
+- Code, pseudocode, SQL, circuit analysis, configuration tasks.
+- Formula substitution, derivation, dimensional analysis, engineering calculation.
+- System design, architecture selection, fault diagnosis, performance optimization.
+- Experiment interpretation: result explanation, error sources, improvement.
 
 ## Problem-solving templates
 
-### Algorithm / code question
+### Algorithm / Code problem
 
 1. Restate input, output, constraints, and edge cases.
-2. Choose data structures or engineering model and justify the choice.
-3. Give the algorithm or procedure in steps.
-4. Analyze correctness: invariant, termination, or engineering rationale.
-5. Analyze complexity, resource use, and limitations.
-6. Test with a normal case, boundary case, and failure case.
+2. Choose data structure or engineering model, justify choice.
+3. Present algorithm or process steps.
+4. Prove correctness: invariants, termination, or engineering rationale.
+5. Analyze complexity, resource usage, limitations.
+6. Test with normal, boundary, and failure cases.
 
-### Engineering calculation question
+### Engineering calculation problem
 
-1. Draw or describe the system boundary.
-2. List knowns, unknowns, units, assumptions, and relevant laws.
-3. Select formulas and explain why they apply.
-4. Substitute values with unit tracking.
-5. Check plausibility: sign, magnitude, conservation, physical meaning.
+1. Draw or describe system boundaries.
+2. List knowns, unknowns, units, assumptions, relevant laws.
+3. Choose formula and explain why it applies.
+4. Substitute with units.
+5. Check reasonableness: sign, order of magnitude, conservation, physical meaning.
 6. State final answer with units and interpretation.
 
-### Design / trade-off question
+### Design / Tradeoff problem
 
-Use: **Requirement → Candidate options → Evaluation criteria → Decision → Risks → Mitigation**.
+Use: **Requirements → Candidate solutions → Evaluation criteria → Decision → Risks → Mitigation**.
+
+### System analysis problem
+
+1. Identify system components and responsibilities.
+2. Draw interaction diagram between components.
+3. Analyze data flow and control flow.
+4. Identify bottlenecks and potential issues.
+5. Propose optimization recommendations.
+
+### Experiment / Debugging problem
+
+1. Describe experiment purpose and method.
+2. Analyze experimental data and results.
+3. Identify error sources.
+4. Propose improvements.
+5. Connect theory and practice.
 
 ## Question bank rules
 
-Generate a balanced set:
+Suggested ratio:
 
-- 25% concept checks and definition contrasts.
-- 25% procedure, algorithm, or mechanism tracing.
-- 25% calculations, code, derivations, or lab-data interpretation.
-- 15% design/trade-off/debugging questions.
-- 10% integrative past-paper-style questions.
+- 25% concept checks and definition discrimination.
+- 25% process, algorithm, or mechanism tracing.
+- 25% calculation, code, derivation, or experimental data interpretation.
+- 15% design, tradeoff, debugging.
+- 10% comprehensive past-paper-style questions.
 
-Each answer should include not only the final result but also the reasoning path, assumptions, and common wrong alternatives.
+Answers should show reasoning paths, assumptions, and common wrong answers.
 
-## High-yield exam prediction signals
+## High-yield exam point signals
 
-Prioritize topics that are:
+Prioritize:
 
-- Repeated in slides, labs, assignments, tutorials, and past papers.
-- Needed to solve multiple later chapters.
-- Associated with formulas, algorithms, diagrams, or named methods.
-- Naturally testable under time pressure.
-- Emphasized by instructor examples, warnings, or “compare/contrast” slides.
+- Content repeated across PPTs, experiments, assignments, exercises, and past papers.
+- Content that is foundational for later chapters.
+- Content accompanied by formulas, algorithms, diagrams, naming conventions.
+- Content suitable for timed exam testing.
+- Content the instructor emphasizes with examples, reminders, or "compare/contrast."
 
-## Active study plan
+## Active review methods
 
-- Use active recall: close notes and reproduce algorithms, formulas, diagrams, or design trade-offs from memory.
-- Use worked examples first, then remove steps gradually until the student solves independently.
-- Interleave similar problems, such as scheduling algorithms, circuit theorems, or mechanical loading cases.
-- Build a one-page “exam operations sheet” with procedures, formulas, edge cases, and debugging checks.
+- Active recall: close notes and write out algorithms, formulas, diagrams, and design tradeoffs.
+- Study complete worked examples, then progressively hide steps until independent.
+- Mix similar problem types (scheduling algorithms, circuit theorems, force analysis).
+- Create a one-page "exam operation sheet": processes, formulas, edge cases, debugging checks.
+- For code problems: write pseudocode by hand first, then verify on computer.
+- For design problems: draw architecture on whiteboard, explain reasoning aloud.
+
+## Common error-prone points
+
+| Error type | Example | Prevention |
+| --- | --- | --- |
+| Boundary conditions | Array out of bounds, null pointer | List all edge cases |
+| Unit omission | Confusing ms and s | Carry units throughout |
+| Complexity analysis | Forgetting extra space | Analyze each loop level |
+| Assumption omission | Algorithm assumes sorted input | Check prerequisites first |
+| Diagram error | Drawing internal forces wrong | Verify with section method |
+| Protocol details | TCP handshake step order | Draw timing diagram |
 
 ## Scoring rubric
 
-Award marks for:
-
-- Correct model/formula/algorithm selection.
-- Clear procedure and intermediate steps.
-- Correct computation or implementation detail.
-- Assumption and constraint handling.
-- Interpretation, trade-off awareness, and final answer clarity.
+Points for: model/formula/algorithm selection, process clarity, intermediate steps, calculation or implementation details, assumption and constraint handling, explanation and tradeoff awareness, final answer expression.

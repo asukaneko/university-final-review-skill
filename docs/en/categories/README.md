@@ -1,8 +1,8 @@
 # Discipline Category Guides
 
-Use these guides to adapt the final-review workflow to different university disciplines.
+These guides adapt the university final-review skill to different majors and course types, rather than serving only computer science courses.
 
-## Categories
+## Discipline categories
 
 - [Computer Science / Engineering](stem-engineering.md)
 - [Natural Sciences / Mathematics](natural-sciences.md)
@@ -15,17 +15,40 @@ Use these guides to adapt the final-review workflow to different university disc
 
 ## How to choose a category
 
-When the course is clearly within one field, use the corresponding category guide. When it crosses fields, combine the closest guides. For example, medical ethics may combine Medicine / Health with Humanities or Law; educational psychology may combine Education with Social Sciences.
+When a course belongs to a single major, use the corresponding category directly. For interdisciplinary courses, combine multiple categories. For example:
+
+- Medical Ethics: combine "Medicine/Health" and "Law/Humanities"
+- Educational Psychology: combine "Education" and "Social Sciences"
+- Business Law: combine "Business/Economics" and "Law"
+- Technical Writing: combine "CS/Engineering" and "Humanities"
+- Health Economics: combine "Medicine/Health" and "Business/Economics"
+
+## Sub-discipline lookup
+
+Each category includes a sub-discipline table showing typical courses and key question types. Use this to quickly identify the most relevant patterns for a specific course.
 
 ## Universal review package
 
-Every category should still preserve the core package:
+Regardless of discipline, a complete review package should include:
 
-1. Course overview
-2. Chapter-by-chapter review notes
-3. Exam point prediction
-4. Question bank
-5. Memorization outline
-6. Discipline-specific worked examples
-7. Final sprint checklist
-8. Mock exam and scoring rubric
+1. Course overview and exam scope
+2. Discipline category and review strategy
+3. Chapter-by-chapter deep notes
+4. Exam point prediction with priority ranking
+5. Concept comparison tables, formula/rule summaries
+6. Chapter-based question bank with answers and explanations
+7. Test cards for active recall (with CSV and interactive HTML export)
+8. Memorization outlines and speed notes
+9. Error log and weak-point repair plan
+10. Discipline-specific worked examples and analysis templates
+11. Final sprint checklist
+12. Precision mock exam with answer key and scoring rubric
+
+## Cross-disciplinary combinations
+
+When a course spans multiple disciplines:
+
+1. Identify the primary and secondary disciplines.
+2. Use the primary discipline's template as the base.
+3. Supplement with secondary discipline-specific content.
+4. Use combination templates at intersection points.

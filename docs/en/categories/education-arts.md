@@ -1,82 +1,177 @@
 # Education / Arts / Design
 
-Use this guide for education, pedagogy, curriculum studies, music, visual arts, performing arts, design, media production, architecture/design studios, and general education courses with creative or reflective assessment.
+Applies to education, pedagogy, curriculum studies, music, visual arts, performing arts, design, media production, architecture/design studio, and general education courses with creative or reflective assessments.
+
+## Sub-discipline lookup
+
+| Sub-discipline | Typical courses | Key question types |
+| --- | --- | --- |
+| Education | Ed Principles, Curriculum, Instructional Design, Ed Psychology | Lesson plan design, theory application, ed research |
+| Subject Teaching | Chinese/Math/English/Science Teaching Methods | Lesson plan analysis, instructional design, classroom management |
+| Music | Music Theory, Music History, Composition, Vocal, Instrumental | Work analysis, performance evaluation, composition |
+| Visual Art | Art History, Painting, Sculpture, Photography, Digital Media | Work critique, creative practice, exhibition planning |
+| Design | Graphic, Product, Interaction, Environmental, Fashion Design | Design critique, user research, design practice |
+| Performing Arts | Theater, Dance, Film/TV Performance | Performance analysis, script interpretation, stage design |
 
 ## Review goal
 
-Help the student connect theory, practice, critique, process, evidence, reflection, and portfolio/lesson/design outcomes in a way that matches exam, studio, or performance assessment.
+Help students connect theory, practice, critique, process, evidence, reflection, and portfolio/lesson plan/design outcomes to match exams, studio, or performance assessments.
 
 ## What to extract from materials
 
-- Educational theories, learning outcomes, curriculum standards, assessment methods, and classroom cases.
-- Design principles, creative processes, precedents, media techniques, composition, form, style, and user/audience needs.
-- Studio briefs, rubrics, critique notes, portfolio requirements, and reflective prompts.
-- Lesson plans, observation notes, teaching strategies, accessibility and inclusion considerations.
-- Artwork/design examples, performances, process documentation, and feedback cycles.
+- Educational theories, learning objectives, curriculum standards, assessment methods, classroom cases.
+- Design principles, creative processes, precedents, media techniques, composition, form, style, user/audience needs.
+- Studio briefs, rubrics, critique feedback, portfolio requirements, reflection prompts.
+- Lesson plans, observation records, teaching strategies, accessibility and inclusion considerations.
+- Art/design cases, performances, process documentation, feedback iterations.
 
 ## Chapter note structure
 
-1. **Practice context**: classroom, studio, audience, user, site, medium, or performance setting.
-2. **Core theory/principle**: definition, origin, use, limitation.
-3. **Process model**: planning, making/teaching, feedback, revision, evaluation.
-4. **Example/precedent analysis**: what works, why, and how to adapt it.
-5. **Rubric alignment**: criteria, evidence, performance levels.
-6. **Critique vocabulary**: precise language for form, pedagogy, interaction, expression, impact.
-7. **Application templates**: lesson plan, design critique, reflective statement, portfolio note.
-8. **Common mistakes**: descriptive reflection, weak evidence, ignoring constraints/users/learners.
-9. **Practice prompts**.
+1. **Practice context**: Classroom, studio, audience, user, venue, medium, or performance environment.
+2. **Core theory/principle**: Definition, source, use, limitations.
+3. **Process model**: Planning, creation/instruction, feedback, revision, evaluation.
+4. **Case/precedent analysis**: What worked, why, how to transfer.
+5. **Rubric alignment**: Criteria, evidence, performance levels.
+6. **Critique vocabulary**: Precise language about form, instruction, interaction, expression, impact.
+7. **Application templates**: Lesson plan, design critique, reflection statement, portfolio description.
+8. **Common errors**: Reflection stays descriptive, weak evidence, ignoring constraints/users/learners.
+9. **Practice questions**.
 
-## Typical exam or assessment types
+## Common question types or assessment forms
 
-- Explain theories, principles, movements, methods, or pedagogical approaches.
-- Analyze a lesson, artwork, design, performance, media text, or classroom scenario.
-- Create or improve a lesson plan, assessment, design proposal, or critique.
-- Reflect on process, feedback, iteration, ethics, accessibility, and audience/user needs.
+- Explain theories, principles, movements, methods, or pedagogical orientations.
+- Analyze lesson plans, artworks, designs, performances, media texts, or classroom situations.
+- Create or improve lesson plans, assessments, design solutions, or critique texts.
+- Reflect on process, feedback, iteration, ethics, accessibility, audience/user needs.
 - Compare precedents, artists, designers, pedagogies, or media strategies.
 
-## Analysis templates
+## Problem-solving templates
 
-### Lesson-plan analysis
+### Lesson plan analysis
 
-Use: **Learners/context → Learning objectives → Activities → Assessment → Differentiation → Rationale → Evidence of learning → Improvement**.
+Use: **Learners/Context → Learning objectives → Activities → Assessment → Differentiation → Rationale → Evidence of learning → Improvement**.
 
-### Design/art critique
+1. Learners/Context: Student age, level, needs, class characteristics.
+2. Learning objectives: Specific, measurable, achievable.
+3. Activities: Introduction, new content, practice, summary segments.
+4. Assessment: How to check learning outcomes.
+5. Differentiation: How to serve different levels.
+6. Rationale: Why this strategy/method was chosen.
+7. Evidence of learning: What evidence shows students learned.
+8. Improvement: How to optimize.
 
-Use: **Intent → Context/audience → Formal elements → Technique/material → Experience/function → Evidence → Judgment → Revision direction**.
+### Design / Art critique
 
-### Reflective writing
+Use: **Intent → Context/Audience → Formal elements → Technique/Materials → Experience/Function → Evidence → Judgment → Revision direction**.
 
-Use: **Experience → Evidence → Interpretation → Theory connection → What changed → Next action**.
+1. Intent: What the creator wants to express/solve.
+2. Context/Audience: In what context, for whom.
+3. Formal elements: Line, color, composition, space, rhythm.
+4. Technique/Materials: Technologies, materials, tools used.
+5. Experience/Function: Viewing/using sensation and functional effect.
+6. Evidence: What specific details support your analysis.
+7. Judgment: Overall evaluation and rationale.
+8. Revision direction: How to improve.
+
+### Reflection writing
+
+Use: **Experience → Evidence → Interpretation → Theory connection → What changed → Next steps**.
+
+1. Experience: What happened.
+2. Evidence: What evidence supports your description.
+3. Interpretation: What it means.
+4. Theory connection: What educational/art theory relates.
+5. Change: What changed in you.
+6. Next steps: What you plan to do.
+
+### Instructional design question
+
+1. Analyze learning needs and student characteristics.
+2. Design learning objectives (cognitive, skill, affective).
+3. Select instructional strategies and activities.
+4. Design assessment methods.
+5. Consider differentiation and inclusion.
+6. Justify design choices.
+
+### Portfolio description
+
+1. Selection criteria: Why these works were chosen.
+2. Overall narrative: Connections between works and growth trajectory.
+3. Individual descriptions: Intent, process, reflection for each work.
+4. Skills demonstrated: Core competencies shown.
+5. Future direction: Next learning plans.
+
+## Critique vocabulary bank
+
+### Formal analysis vocabulary
+
+| Dimension | Available terms |
+| --- | --- |
+| Composition | Balance, symmetry, hierarchy, focal point, negative space, tension |
+| Color | Hue, contrast, harmony, warm/cool, saturation |
+| Line | Fluid, rigid, thickness, direction, rhythm |
+| Texture | Smooth, rough, transparent, heavy, light |
+| Space | Depth, perspective, foreground/background,虚实, open/closed |
+
+### Instructional analysis vocabulary
+
+| Dimension | Available terms |
+| --- | --- |
+| Objectives | Specific, measurable, differentiated, Bloom's level |
+| Strategies | Direct instruction, inquiry, collaboration, scaffolding, differentiation |
+| Assessment | Formative, summative, self-assessment, peer assessment, rubric |
+| Interaction | Teacher-student, student-student, questioning levels, feedback |
+
+### Design analysis vocabulary
+
+| Dimension | Available terms |
+| --- | --- |
+| Function | Usability, efficiency, learnability, error tolerance |
+| Aesthetics | Simplicity, refinement, modern, classic, playful |
+| User | User persona, user journey, pain points, needs |
+| Process | Iteration, prototype, testing, feedback, optimization |
 
 ## Question bank rules
 
-Generate:
+Suggested ratio:
 
-- 20% theory/principle recall.
-- 25% critique or analysis questions.
-- 25% application/design/lesson planning tasks.
-- 20% reflective evaluation prompts.
-- 10% portfolio or performance-preparation checklists.
+- 20% theory/principle memorization.
+- 25% critique or analysis.
+- 25% application/design/lesson plan tasks.
+- 20% reflection/evaluation.
+- 10% portfolio or performance preparation checklist.
 
-Answers should model precise vocabulary and evidence-based critique rather than vague praise.
+Answers should demonstrate precise vocabulary and evidence-based critique, not vague praise.
 
-## High-yield exam prediction signals
+## High-yield exam point signals
 
-Prioritize topics that:
+Prioritize:
 
-- Appear in rubrics, briefs, critique sessions, or learning outcomes.
-- Connect theory to practical design/teaching/performance choices.
-- Require justification, reflection, or improvement proposals.
-- Involve ethics, inclusion, audience, accessibility, or context.
+- Content appearing in rubrics, briefs, critique sessions, or learning objectives.
+- Content linking theory to actual design/teaching/performance choices.
+- Content requiring argumentation, reflection, or improvement proposals.
+- Content involving ethics, inclusion, audience, accessibility, or context.
 
-## Active study plan
+## Active review methods
 
-- Make flashcards for theories/principles with concrete examples.
-- Practice critique on unfamiliar examples using the same template.
-- Build a portfolio evidence map: criterion → artifact → explanation.
-- Rehearse lesson/design rationales aloud.
-- Use spaced reflection: revisit feedback and write next-step actions.
+- Create theory/principle cards with specific examples.
+- Analyze unfamiliar cases using the same template.
+- Build portfolio evidence maps: criteria → works → explanations.
+- Verbalize lesson plan/design rationale.
+- Spaced reflection: review feedback and write next steps.
+- Critique exercise: choose one work, write 500-word analysis using full critique framework.
+
+## Common error-prone points
+
+| Error type | Example | Prevention |
+| --- | --- | --- |
+| Reflection stays descriptive | "I did X" | Ask "what does this mean" |
+| Critique lacks evidence | "This design is good" | Cite specific elements |
+| Ignoring constraints | Not considering users/venue | List all constraints |
+| Theory disconnect | Practice without theory link | Every point with theoretical basis |
+| Vague evaluation | "Has strengths and weaknesses" | Be specific to criteria |
+| Imprecise vocabulary | Using "nice," "good" | Use professional critique terms |
 
 ## Scoring rubric
 
-Award marks for theory accuracy, application to context, evidence-based critique, process awareness, creativity within constraints, reflection depth, and clear professional language.
+Points for: theory accuracy, contextual application, evidence-based critique, process awareness, creativity within constraints, reflection depth, professional expression.
