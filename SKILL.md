@@ -51,18 +51,32 @@ When a course spans multiple disciplines, combine the relevant category guides. 
 1. Identify the course, chapters, discipline category, exam scope, and available materials.
 2. Apply evidence-based study principles from `docs/en/learning-strategies.md` or `docs/zh-CN/learning-strategies.md`, then select the relevant discipline-specific review pattern.
 3. Extract the chapter structure and major concepts from the user-provided files.
-4. Generate deep lecture notes for each chapter with discipline-specific structure.
-5. Identify high-priority exam points and likely question types.
-6. Generate a chapter-based question bank with answers and explanations across multiple difficulty levels.
-7. Create comparison tables, concept maps, and memory aids for similar concepts.
-8. Generate discipline-specific test cards using `docs/en/test-cards.md` or `docs/zh-CN/test-cards.md`.
-9. If the user requests an interactive card-review tool, first generate a test-card CSV with columns `ID,Front,Back,Chapter,Topic,Difficulty,CardType,Tags`, then run `scripts/generate_test_cards_html.py` to create a standalone HTML review interface.
-10. Produce memorization outlines with multiple memory techniques (keyword chains, mnemonics, acronyms, visual associations).
-11. Provide discipline-specific worked examples and analysis templates using `docs/en/problem-solving-coach.md` or `docs/zh-CN/problem-solving-coach.md`.
-12. Generate error-prone point analysis with prevention strategies.
-13. Create study strategy recommendations adapted to the discipline.
-14. If the user requests DOCX / Word output, apply the DOCX style guide instead of producing an unstyled plain document.
-15. Generate a blueprint-driven precision mock exam using `docs/en/precision-mock-exam.md` or `docs/zh-CN/precision-mock-exam.md` if requested or when a complete package is requested.
+4. Build a material coverage map before writing: list the uploaded files, chapters, slide/section ranges, visible headings, diagrams, tables, examples, exercises, and teacher-emphasized cues that must be preserved.
+5. Generate deep lecture notes for each chapter with discipline-specific structure and source-grounded expansion.
+6. Identify high-priority exam points and likely question types.
+7. Generate a chapter-based question bank with answers and explanations across multiple difficulty levels.
+8. Create comparison tables, concept maps, and memory aids for similar concepts.
+9. Generate discipline-specific test cards using `docs/en/test-cards.md` or `docs/zh-CN/test-cards.md`.
+10. If the user requests an interactive card-review tool, first generate a test-card CSV with columns `ID,Front,Back,Chapter,Topic,Difficulty,CardType,Tags`, then run `scripts/generate_test_cards_html.py` to create a standalone HTML review interface.
+11. Produce memorization outlines with multiple memory techniques (keyword chains, mnemonics, acronyms, visual associations).
+12. Provide discipline-specific worked examples and analysis templates using `docs/en/problem-solving-coach.md` or `docs/zh-CN/problem-solving-coach.md`.
+13. Generate error-prone point analysis with prevention strategies.
+14. Create study strategy recommendations adapted to the discipline.
+15. If the user requests DOCX / Word output, apply the DOCX style guide instead of producing an unstyled plain document.
+16. Generate a blueprint-driven precision mock exam using `docs/en/precision-mock-exam.md` or `docs/zh-CN/precision-mock-exam.md` if requested or when a complete package is requested.
+
+## Grounding and information-preservation constraints
+
+These constraints override brevity and generic summarization:
+
+1. **Material-first, not template-first.** The lecture notes must be built from the actual uploaded files or explicitly mentioned course materials. Do not write generic textbook-style notes that could apply to any course without showing how the uploaded material shaped the content.
+2. **Preserve source information.** Important definitions, formulas, processes, algorithms, diagrams, tables, examples, case names, experiment steps, code snippets, theorem conditions, teacher-emphasized points, and exercise patterns from the materials must be retained unless they are exact duplicates.
+3. **No thin units.** A chapter, unit, or section must not be reduced to a few abstract bullets when the uploaded material contains substantial content. Each meaningful unit should include enough explanation, examples, exam use, and mistake-prone analysis to recover the original learning value of the material.
+4. **Coverage before compression.** Compress repeated wording, but do not delete distinct concepts, boundary conditions, variants, steps, examples, or diagram/table information. If space is limited, prioritize structured tables and compact explanations over omission.
+5. **Source labels are required.** Mark content sources with `来自上传资料`, `基于资料推测的考点`, or `补充背景知识` / `From uploaded materials`, `Exam points inferred from materials`, or `Supplementary background`.
+6. **Mention evidence cues.** For key points, reference the evidence type from the material, such as PPT heading, repeated keyword, diagram, table, worked example, assignment question, past-paper pattern, or teacher-emphasis cue.
+7. **Flag missing or unclear material.** If the uploaded files are incomplete, low-resolution, truncated, or missing chapters, say what is missing and avoid silently filling the gap as if it came from the uploaded material.
+8. **Quality check before final output.** Before delivering notes or DOCX content, verify that every uploaded chapter/section has corresponding notes, no obvious table/diagram/example was skipped, and supplementary content is clearly labeled.
 
 ## Documentation
 
@@ -103,6 +117,7 @@ Chinese documentation is in `docs/zh-CN/`.
 
 - Stay grounded in the uploaded materials.
 - Do not produce vague summaries when the user asks for exam review.
+- Do not let any unit become too thin: preserve the informational density of the uploaded materials and expand important points into study-ready explanations.
 - Choose an output structure that fits the discipline.
 - Make the output directly useful for studying, memorizing, analyzing, and solving questions.
 - Use clear sectioning, tables, worked examples, concept maps, timelines, case templates, test cards, and scoring rubrics when useful.
@@ -134,4 +149,5 @@ When the user asks for a complete review package, include:
 15. Blueprint-driven 100-point precision mock exam with answer key, partial-credit rubric, and post-exam diagnosis
 
 Base directory for this skill: file:///C:/Users/ycssb/.claude/skills/university-final-review-skill-main
+
 Relative paths in this skill (e.g., scripts/, reference/) are relative to this base directory.
