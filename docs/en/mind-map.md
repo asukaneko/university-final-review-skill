@@ -125,6 +125,17 @@ Mind maps in DOCX should prioritize print readability:
 
 Generate an image only when the user explicitly asks for a mind-map image. Build the image from a structured outline or Mermaid source first so the source structure is not lost.
 
+In ChatGPT, when the user requests a mind-map image, or when a DOCX/complete review package would benefit from a clearer visual map, prefer the OpenAI image model available in ChatGPT or ChatGPT's built-in visual tool to convert the verified Mermaid, indented tree, or hierarchical outline into an accurate, beautiful, readable, print-friendly mind-map image.
+
+Visual rendering must follow these rules:
+
+1. **Structure first, image second**: generate a source-grounded Mermaid map, indented tree, or hierarchical outline before making the image.
+2. **Accuracy first**: node text, hierarchy, formula/process/algorithm/diagram clues, and must-know/mistake-prone/question-type tags must match the structured map.
+3. **No unsupported additions**: do not add nodes outside the uploaded materials or user-specified scope for decoration.
+4. **Readable layout**: keep text clear, main trunks visible, branches uncrowded, and the result suitable for printing and final review.
+5. **Restrained visual design**: use soft colors, rounded nodes, clear connectors, and light icons only when they do not reduce accuracy.
+6. **Post-render check**: if the image contains text errors, missing nodes, or incorrect hierarchy, treat the Mermaid / tree version as the reliable source and render again or add a correction note.
+
 ## Reading guide
 
 After each mind map, include a short reading guide explaining:
@@ -146,3 +157,4 @@ Before outputting a mind map, check:
 - [ ] It marks must-know, high-frequency, mistake-prone, and question-type nodes.
 - [ ] It avoids generic templates and decorative nodes.
 - [ ] It includes a reading guide.
+- [ ] If an image is created, it matches the structured map and is accurate, clear, beautiful, and print-friendly.
