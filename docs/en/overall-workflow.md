@@ -28,13 +28,14 @@ The user may provide:
 
 ### Step 2: Material inventory and structure extraction
 
-Before writing the notes, build a material coverage map to avoid information loss.
+Before writing the notes, build a material coverage map to avoid information loss and to provide the structure for mind maps.
 
 1. Organize the materials by file, chapter, page/slide range, and heading hierarchy.
 2. Extract core concepts, definitions, formulas, processes, algorithms, diagrams, tables, worked examples, experiment steps, cases, assignments, and past-paper clues.
 3. Mark frequently occurring content, high-level headings, instructor-emphasized points, repeated keywords, and question-type clues.
 4. Build a logical relationship map between chapters.
-5. Mark information-dense units as "must expand" so they are not reduced to brief summaries.
+5. Extract mind-map nodes for the course overview and each chapter overview: chapter themes, primary modules, secondary concepts, key formulas/processes/algorithms/diagrams, typical examples, and high-yield exam points.
+6. Mark information-dense units as "must expand" so they are not reduced to brief summaries.
 
 ### Step 3: Chapter-by-chapter deep generation
 
@@ -42,18 +43,21 @@ For each chapter, generate in this order:
 
 1. Chapter overview and position in the course.
 2. Material coverage map: uploaded files, material excerpts, diagrams, tables, formulas, worked examples, assignments, or user-mentioned content used for this chapter.
-3. Core concepts and definitions.
-4. Key mechanisms, formulas, algorithms, structural diagrams, experiment steps, or case frameworks.
-5. Exam-oriented explanations.
-6. Common question types and problem-solving approaches.
-7. Common errors and precautions.
-8. Concept comparison tables.
-9. One-page speed notes.
-10. Practice problems and answers.
+3. Chapter overview mind map: use Mermaid `mindmap`, an indented tree, or DOCX hierarchy boxes to show the chapter knowledge structure.
+4. Mind-map reading guide: identify which trunks to review first, which branches correspond to exam question types, and which nodes require memorization or calculation.
+5. Core concepts and definitions.
+6. Key mechanisms, formulas, algorithms, structural diagrams, experiment steps, or case frameworks.
+7. Exam-oriented explanations.
+8. Common question types and problem-solving approaches.
+9. Common errors and precautions.
+10. Concept comparison tables.
+11. One-page speed notes.
+12. Practice problems and answers.
 
 When generating chapter notes, follow these constraints:
 
 - The notes must correspond to the uploaded materials or the user's explicitly mentioned material scope. Do not write generic disciplinary knowledge only.
+- The chapter overview must include a mind map, and mind-map nodes must come from headings, diagrams, formulas, processes, algorithms, examples, assignments, or exam-point clues in the materials.
 - Units must not be too thin. If a section has substantial source material, expand it into "definition/conclusion + mechanism/process + preserved material details + example/question type + mistake-prone points".
 - Do not lose source information. Preserve or rewrite definitions, formulas, steps, diagrams, examples, classifications, conditions, advantages/disadvantages, case elements, and question-type clues as study tables or explanations.
 - Compress repeated wording only; do not delete distinct concepts, conditions, variants, or examples.
@@ -65,6 +69,7 @@ When generating chapter notes, follow these constraints:
 3. Mark must-know points, high-frequency points, and low-frequency easy points.
 4. Provide priority for "1 day left" and "3 hours left" scenarios.
 5. For every important exam point, state the evidence cue: heading hierarchy, repetition, diagram/table/formula, assignment, past paper, worked example, or instructor-emphasis trace.
+6. Add must-know, high-frequency, and mistake-prone markers to the corresponding mind-map nodes.
 
 ### Step 5: Question bank generation
 
@@ -73,6 +78,7 @@ When generating chapter notes, follow these constraints:
 3. Include multiple question types (MCQ, fill-in, short answer, calculation, case, etc.).
 4. Each question with detailed explanation and common errors.
 5. Prefer converting examples, assignments, past papers, and typical diagrams/tables from the materials into question prototypes.
+6. Questions may reference corresponding mind-map branches to help students review structurally.
 
 ### Step 6: Active recall materials
 
@@ -80,6 +86,7 @@ When generating chapter notes, follow these constraints:
 2. Organize memorization outlines and speed notes.
 3. Provide keyword chain memory techniques and mnemonics.
 4. Cards should cover key definitions, formulas, processes, diagrams, comparison points, example methods, and mistake-prone points from the materials.
+5. Test cards may be grouped by chapter mind-map branches.
 
 ### Step 7: Problem-solving coach
 
@@ -101,6 +108,7 @@ When generating chapter notes, follow these constraints:
 2. If needed, generate a DOCX version.
 3. If needed, generate an interactive test card HTML.
 4. Before final delivery, run a material coverage check to ensure no important unit, diagram, formula, worked example, process, or question-type clue has been skipped.
+5. Check that the course overview and every chapter overview include source-grounded mind maps rather than generic templates.
 
 ## Default complete output
 
@@ -110,18 +118,20 @@ A complete final-review package should include:
 2. Discipline category and review strategy (with sub-discipline breakdown)
 3. Chapter structure
 4. Material coverage map
-5. Chapter-by-chapter review notes
-6. Exam priority ranking (must-know / high-frequency / low-frequency easy)
-7. Key definitions and core concepts
-8. Concept comparison tables, formula/rule summaries
-9. Common question types
-10. Common errors
-11. Chapter question bank (4 difficulty levels: basic / standard / comprehensive / transfer)
-12. Test cards (exportable as CSV and interactive HTML)
-13. Memorization outlines with multiple memory techniques
-14. Error log and weak-point repair plan
-15. Final sprint checklist with time allocation advice
-16. Precision mock exam (with scoring rubric and post-exam diagnosis)
+5. Course overview mind map
+6. Chapter overview mind maps for each chapter
+7. Chapter-by-chapter review notes
+8. Exam priority ranking (must-know / high-frequency / low-frequency easy)
+9. Key definitions and core concepts
+10. Concept comparison tables, formula/rule summaries
+11. Common question types
+12. Common errors
+13. Chapter question bank (4 difficulty levels: basic / standard / comprehensive / transfer)
+14. Test cards (exportable as CSV and interactive HTML)
+15. Memorization outlines with multiple memory techniques
+16. Error log and weak-point repair plan
+17. Final sprint checklist with time allocation advice
+18. Precision mock exam (with scoring rubric and post-exam diagnosis)
 
 ## Grounding rule
 
@@ -139,17 +149,27 @@ A complete review package is not a minimal summary; it is a structured rewrite o
 
 1. Cover every uploaded or mentioned chapter, unit, and major subsection.
 2. Preserve definitions, formulas, processes, algorithms, diagrams, tables, examples, classifications, experiment steps, cases, assignments, and past-paper clues from the materials.
-3. Do not mention diagrams, formulas, or examples only in passing; convert them into explanations, tables, steps, or question templates.
+3. Do not mention diagrams, formulas, or examples only in passing; convert them into explanations, tables, steps, question templates, or mind-map nodes.
 4. Units must not be too short. If a unit has substantial source material, the notes should increase in depth accordingly.
 5. Compress repeated information only; do not delete independent information points.
 6. If materials are missing or unreadable, clearly state the missing range.
+
+## Mind-map rule
+
+When generating course overview or chapter overview content, follow [`mind-map.md`](mind-map.md). Default requirements:
+
+- The course overview mind map shows chapter relationships, main course logic, module grouping, and exam weight.
+- Chapter overview mind maps show heading hierarchy, core concepts, formulas/processes/algorithms/diagrams, worked examples, and question-type clues.
+- Nodes must come from the materials or be inferred from the material structure. Do not use generic templates.
+- Markdown output should prefer Mermaid `mindmap`; DOCX output should use printable hierarchy boxes, indented trees, table blocks, or readable images.
+- Mind maps should serve review rather than decoration; prioritize structure, relationships, exam points, and mistake-prone points.
 
 ## Output format
 
 Choose output format based on user needs:
 
-- **Markdown**: Default format, suitable for online viewing and editing.
-- **DOCX/Word**: Suitable for printing and sharing, see [`docx-style-guide.md`](docx-style-guide.md).
+- **Markdown**: Default format, suitable for online viewing and editing; mind maps should prefer Mermaid `mindmap` or indented trees.
+- **DOCX/Word**: Suitable for printing and sharing, see [`docx-style-guide.md`](docx-style-guide.md); mind maps should use hierarchy boxes, indented trees, table blocks, or readable images.
 - **Interactive HTML**: Test cards only, see [`test-cards.md`](test-cards.md).
 
 ## Multi-disciplinary combinations
@@ -175,6 +195,9 @@ After completing the review package, check:
 
 - [ ] Chapter structure fully covers exam scope.
 - [ ] A material coverage map has been created.
+- [ ] A course overview mind map has been generated.
+- [ ] Every chapter overview includes a mind map.
+- [ ] Mind maps come from the material structure and cover major sections, diagrams, formulas, processes, examples, and exam-point clues.
 - [ ] Every chapter and section corresponds to uploaded or user-mentioned materials.
 - [ ] Concept definitions are accurate and clear.
 - [ ] Formulas and theorems include applicable conditions.
