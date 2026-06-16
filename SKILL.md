@@ -1,6 +1,6 @@
 ---
 name: university-final-review
-description: Generate comprehensive, cross-disciplinary university final-exam review materials from PPT slides, lecture notes, assignments, syllabi, screenshots, lab materials, case materials, or past papers. Use this skill when the user asks for final review notes, exam-point prediction, question banks, memorization outlines, mock exams, discipline-specific review plans, step-by-step problem/case/clinical/proof coaching, or polished DOCX/Word review handouts.
+description: Generate comprehensive, cross-disciplinary university final-exam review materials from PPT slides, lecture notes, assignments, syllabi, screenshots, lab materials, case materials, or past papers. Use this skill when the user asks for final review notes, exam-point prediction, question banks, memorization outlines, mock exams, discipline-specific review plans, step-by-step problem/case/clinical/proof coaching, concept maps or mind maps, or polished DOCX/Word review handouts.
 ---
 
 # University Final Review Skill
@@ -20,7 +20,7 @@ Use this skill when the user wants to:
 - Explain discipline-specific problem solving, such as calculation, proof, experiment analysis, case analysis, legal issue spotting, clinical reasoning, design critique, or essay planning.
 - Get discipline-specific study strategy recommendations.
 - Compare similar concepts, theories, diseases, or frameworks.
-- Create concept maps, comparison tables, and memory aids.
+- Create concept maps, mind maps, comparison tables, and memory aids.
 - Get error-prone point analysis and prevention strategies.
 
 ## Supported discipline categories
@@ -52,18 +52,19 @@ When a course spans multiple disciplines, combine the relevant category guides. 
 2. Apply evidence-based study principles from `docs/en/learning-strategies.md` or `docs/zh-CN/learning-strategies.md`, then select the relevant discipline-specific review pattern.
 3. Extract the chapter structure and major concepts from the user-provided files.
 4. Build a material coverage map before writing: list the uploaded files, chapters, slide/section ranges, visible headings, diagrams, tables, examples, exercises, and teacher-emphasized cues that must be preserved.
-5. Generate deep lecture notes for each chapter with discipline-specific structure and source-grounded expansion.
-6. Identify high-priority exam points and likely question types.
-7. Generate a chapter-based question bank with answers and explanations across multiple difficulty levels.
-8. Create comparison tables, concept maps, and memory aids for similar concepts.
-9. Generate discipline-specific test cards using `docs/en/test-cards.md` or `docs/zh-CN/test-cards.md`.
-10. If the user requests an interactive card-review tool, first generate a test-card CSV with columns `ID,Front,Back,Chapter,Topic,Difficulty,CardType,Tags`, then run `scripts/generate_test_cards_html.py` to create a standalone HTML review interface.
-11. Produce memorization outlines with multiple memory techniques (keyword chains, mnemonics, acronyms, visual associations).
-12. Provide discipline-specific worked examples and analysis templates using `docs/en/problem-solving-coach.md` or `docs/zh-CN/problem-solving-coach.md`.
-13. Generate error-prone point analysis with prevention strategies.
-14. Create study strategy recommendations adapted to the discipline.
-15. If the user requests DOCX / Word output, apply the DOCX style guide instead of producing an unstyled plain document.
-16. Generate a blueprint-driven precision mock exam using `docs/en/precision-mock-exam.md` or `docs/zh-CN/precision-mock-exam.md` if requested or when a complete package is requested.
+5. Generate a course-level and chapter-level mind map from the material coverage map using `docs/en/mind-map.md` or `docs/zh-CN/mind-map.md`. The chapter overview must include a mind map before detailed notes.
+6. Generate deep lecture notes for each chapter with discipline-specific structure and source-grounded expansion.
+7. Identify high-priority exam points and likely question types.
+8. Generate a chapter-based question bank with answers and explanations across multiple difficulty levels.
+9. Create comparison tables, concept maps, and memory aids for similar concepts.
+10. Generate discipline-specific test cards using `docs/en/test-cards.md` or `docs/zh-CN/test-cards.md`.
+11. If the user requests an interactive card-review tool, first generate a test-card CSV with columns `ID,Front,Back,Chapter,Topic,Difficulty,CardType,Tags`, then run `scripts/generate_test_cards_html.py` to create a standalone HTML review interface.
+12. Produce memorization outlines with multiple memory techniques (keyword chains, mnemonics, acronyms, visual associations).
+13. Provide discipline-specific worked examples and analysis templates using `docs/en/problem-solving-coach.md` or `docs/zh-CN/problem-solving-coach.md`.
+14. Generate error-prone point analysis with prevention strategies.
+15. Create study strategy recommendations adapted to the discipline.
+16. If the user requests DOCX / Word output, apply the DOCX style guide instead of producing an unstyled plain document.
+17. Generate a blueprint-driven precision mock exam using `docs/en/precision-mock-exam.md` or `docs/zh-CN/precision-mock-exam.md` if requested or when a complete package is requested.
 
 ## Grounding and information-preservation constraints
 
@@ -75,8 +76,9 @@ These constraints override brevity and generic summarization:
 4. **Coverage before compression.** Compress repeated wording, but do not delete distinct concepts, boundary conditions, variants, steps, examples, or diagram/table information. If space is limited, prioritize structured tables and compact explanations over omission.
 5. **Source labels are required.** Mark content sources with `来自上传资料`, `基于资料推测的考点`, or `补充背景知识` / `From uploaded materials`, `Exam points inferred from materials`, or `Supplementary background`.
 6. **Mention evidence cues.** For key points, reference the evidence type from the material, such as PPT heading, repeated keyword, diagram, table, worked example, assignment question, past-paper pattern, or teacher-emphasis cue.
-7. **Flag missing or unclear material.** If the uploaded files are incomplete, low-resolution, truncated, or missing chapters, say what is missing and avoid silently filling the gap as if it came from the uploaded material.
-8. **Quality check before final output.** Before delivering notes or DOCX content, verify that every uploaded chapter/section has corresponding notes, no obvious table/diagram/example was skipped, and supplementary content is clearly labeled.
+7. **Mind maps must be source-grounded.** Course and chapter mind maps must reflect the actual chapter headings, section hierarchy, diagrams, formulas, examples, and relationships from the uploaded materials. Do not generate decorative or generic mind maps that ignore the source structure.
+8. **Flag missing or unclear material.** If the uploaded files are incomplete, low-resolution, truncated, or missing chapters, say what is missing and avoid silently filling the gap as if it came from the uploaded material.
+9. **Quality check before final output.** Before delivering notes or DOCX content, verify that every uploaded chapter/section has corresponding notes, no obvious table/diagram/example was skipped, mind maps cover the real chapter structure, and supplementary content is clearly labeled.
 
 ## Documentation
 
@@ -92,6 +94,7 @@ Chinese documentation is in `docs/zh-CN/`.
 ### Content generation docs
 
 - `docs/en/deep-lecture-notes.md` / `docs/zh-CN/deep-lecture-notes.md` — Chapter-by-chapter deep notes
+- `docs/en/mind-map.md` / `docs/zh-CN/mind-map.md` — Source-grounded course and chapter mind maps
 - `docs/en/exam-point-predictor.md` / `docs/zh-CN/exam-point-predictor.md` — Exam point prediction
 - `docs/en/question-bank-generator.md` / `docs/zh-CN/question-bank-generator.md` — Question bank generation
 - `docs/en/test-cards.md` / `docs/zh-CN/test-cards.md` — Test cards and active recall
@@ -118,11 +121,12 @@ Chinese documentation is in `docs/zh-CN/`.
 - Stay grounded in the uploaded materials.
 - Do not produce vague summaries when the user asks for exam review.
 - Do not let any unit become too thin: preserve the informational density of the uploaded materials and expand important points into study-ready explanations.
+- Add a mind map in the course overview and in every chapter overview. Use Mermaid mindmap, Markdown tree, or DOCX-friendly hierarchy boxes depending on the requested output format.
 - Choose an output structure that fits the discipline.
 - Make the output directly useful for studying, memorizing, analyzing, and solving questions.
-- Use clear sectioning, tables, worked examples, concept maps, timelines, case templates, test cards, and scoring rubrics when useful.
+- Use clear sectioning, tables, worked examples, concept maps, mind maps, timelines, case templates, test cards, and scoring rubrics when useful.
 - For interactive test-card review, generate a clean CSV first, then create a standalone HTML interface with search, filters, flip cards, self-rating, weak-card review, progress tracking, and exportable study records.
-- For DOCX output, use polished academic handout formatting: blue headings, callout boxes, readable tables, headers, footers, page breaks, and printable spacing.
+- For DOCX output, use polished academic handout formatting: blue headings, callout boxes, readable tables, headers, footers, page breaks, printable spacing, and readable mind-map blocks.
 - For medical, legal, financial, or other high-stakes subjects, frame outputs as study support, not professional advice.
 - For Chinese users, produce exam-oriented Chinese explanations unless the user requests English.
 - For English users, produce polished English study notes unless the user requests Chinese.
@@ -135,18 +139,19 @@ When the user asks for a complete review package, include:
 1. Course overview and exam scope
 2. Discipline category and review strategy (with sub-discipline breakdown)
 3. Evidence-based study plan with spaced repetition schedule
-4. Chapter-by-chapter deep notes with discipline-specific structure
-5. Exam point prediction with priority ranking (必考点 / 高频考点 / 低频易拿分)
-6. Concept comparison tables, formula/rule summaries
-7. Chapter-based question bank (4 difficulty levels: 基础 / 常考 / 综合 / 迁移)
-8. Test cards for active recall, optionally exported as CSV and interactive HTML using `scripts/generate_test_cards_html.py`
-9. Memorization outlines with multiple memory techniques (keyword chains, mnemonics, acronyms, visual associations)
-10. Discipline-specific worked examples and analysis templates
-11. Error-prone point analysis with prevention strategies
-12. Error log and weak-point repair plan
-13. Final sprint checklist with time allocation advice
-14. Optional polished DOCX handout using the style guide
-15. Blueprint-driven 100-point precision mock exam with answer key, partial-credit rubric, and post-exam diagnosis
+4. Course-level mind map and chapter-level overview mind maps
+5. Chapter-by-chapter deep notes with discipline-specific structure
+6. Exam point prediction with priority ranking (必考点 / 高频考点 / 低频易拿分)
+7. Concept comparison tables, formula/rule summaries
+8. Chapter-based question bank (4 difficulty levels: 基础 / 常考 / 综合 / 迁移)
+9. Test cards for active recall, optionally exported as CSV and interactive HTML using `scripts/generate_test_cards_html.py`
+10. Memorization outlines with multiple memory techniques (keyword chains, mnemonics, acronyms, visual associations)
+11. Discipline-specific worked examples and analysis templates
+12. Error-prone point analysis with prevention strategies
+13. Error log and weak-point repair plan
+14. Final sprint checklist with time allocation advice
+15. Optional polished DOCX handout using the style guide
+16. Blueprint-driven 100-point precision mock exam with answer key, partial-credit rubric, and post-exam diagnosis
 
 Base directory for this skill: file:///C:/Users/ycssb/.claude/skills/university-final-review-skill-main
 
