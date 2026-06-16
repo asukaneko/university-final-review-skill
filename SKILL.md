@@ -53,18 +53,19 @@ When a course spans multiple disciplines, combine the relevant category guides. 
 3. Extract the chapter structure and major concepts from the user-provided files.
 4. Build a material coverage map before writing: list the uploaded files, chapters, slide/section ranges, visible headings, diagrams, tables, examples, exercises, and teacher-emphasized cues that must be preserved.
 5. Generate a course-level and chapter-level mind map from the material coverage map using `docs/en/mind-map.md` or `docs/zh-CN/mind-map.md`. The chapter overview must include a mind map before detailed notes.
-6. Generate deep lecture notes for each chapter with discipline-specific structure and source-grounded expansion.
-7. Identify high-priority exam points and likely question types.
-8. Generate a chapter-based question bank with answers and explanations across multiple difficulty levels.
-9. Create comparison tables, concept maps, and memory aids for similar concepts.
-10. Generate discipline-specific test cards using `docs/en/test-cards.md` or `docs/zh-CN/test-cards.md`.
-11. If the user requests an interactive card-review tool, first generate a test-card CSV with columns `ID,Front,Back,Chapter,Topic,Difficulty,CardType,Tags`, then run `scripts/generate_test_cards_html.py` to create a standalone HTML review interface.
-12. Produce memorization outlines with multiple memory techniques (keyword chains, mnemonics, acronyms, visual associations).
-13. Provide discipline-specific worked examples and analysis templates using `docs/en/problem-solving-coach.md` or `docs/zh-CN/problem-solving-coach.md`.
-14. Generate error-prone point analysis with prevention strategies.
-15. Create study strategy recommendations adapted to the discipline.
-16. If the user requests DOCX / Word output, apply the DOCX style guide instead of producing an unstyled plain document.
-17. Generate a blueprint-driven precision mock exam using `docs/en/precision-mock-exam.md` or `docs/zh-CN/precision-mock-exam.md` if requested or when a complete package is requested.
+6. In ChatGPT, when the user requests a mind-map image or a visual map would clearly improve the DOCX/complete review package, first create a verified Mermaid/outline version, then use GPT 图像模型 2 or ChatGPT's built-in visual tool to render an accurate, beautiful, readable mind-map image.
+7. Generate deep lecture notes for each chapter with discipline-specific structure and source-grounded expansion.
+8. Identify high-priority exam points and likely question types.
+9. Generate a chapter-based question bank with answers and explanations across multiple difficulty levels.
+10. Create comparison tables, concept maps, and memory aids for similar concepts.
+11. Generate discipline-specific test cards using `docs/en/test-cards.md` or `docs/zh-CN/test-cards.md`.
+12. If the user requests an interactive card-review tool, first generate a test-card CSV with columns `ID,Front,Back,Chapter,Topic,Difficulty,CardType,Tags`, then run `scripts/generate_test_cards_html.py` to create a standalone HTML review interface.
+13. Produce memorization outlines with multiple memory techniques (keyword chains, mnemonics, acronyms, visual associations).
+14. Provide discipline-specific worked examples and analysis templates using `docs/en/problem-solving-coach.md` or `docs/zh-CN/problem-solving-coach.md`.
+15. Generate error-prone point analysis with prevention strategies.
+16. Create study strategy recommendations adapted to the discipline.
+17. If the user requests DOCX / Word output, apply the DOCX style guide instead of producing an unstyled plain document.
+18. Generate a blueprint-driven precision mock exam using `docs/en/precision-mock-exam.md` or `docs/zh-CN/precision-mock-exam.md` if requested or when a complete package is requested.
 
 ## Grounding and information-preservation constraints
 
@@ -77,8 +78,9 @@ These constraints override brevity and generic summarization:
 5. **Source labels are required.** Mark content sources with `来自上传资料`, `基于资料推测的考点`, or `补充背景知识` / `From uploaded materials`, `Exam points inferred from materials`, or `Supplementary background`.
 6. **Mention evidence cues.** For key points, reference the evidence type from the material, such as PPT heading, repeated keyword, diagram, table, worked example, assignment question, past-paper pattern, or teacher-emphasis cue.
 7. **Mind maps must be source-grounded.** Course and chapter mind maps must reflect the actual chapter headings, section hierarchy, diagrams, formulas, examples, and relationships from the uploaded materials. Do not generate decorative or generic mind maps that ignore the source structure.
-8. **Flag missing or unclear material.** If the uploaded files are incomplete, low-resolution, truncated, or missing chapters, say what is missing and avoid silently filling the gap as if it came from the uploaded material.
-9. **Quality check before final output.** Before delivering notes or DOCX content, verify that every uploaded chapter/section has corresponding notes, no obvious table/diagram/example was skipped, mind maps cover the real chapter structure, and supplementary content is clearly labeled.
+8. **Mind-map images must be checked.** When a mind-map image is rendered, the structured Mermaid/outline version remains the source of truth. Check that the image preserves node text, hierarchy, relationships, exam tags, and readable layout; if it drops or distorts important content, provide the structured text version as the reliable source and render again or add a correction note.
+9. **Flag missing or unclear material.** If the uploaded files are incomplete, low-resolution, truncated, or missing chapters, say what is missing and avoid silently filling the gap as if it came from the uploaded material.
+10. **Quality check before final output.** Before delivering notes or DOCX content, verify that every uploaded chapter/section has corresponding notes, no obvious table/diagram/example was skipped, mind maps cover the real chapter structure, mind-map images match the structured map, and supplementary content is clearly labeled.
 
 ## Documentation
 
@@ -122,11 +124,12 @@ Chinese documentation is in `docs/zh-CN/`.
 - Do not produce vague summaries when the user asks for exam review.
 - Do not let any unit become too thin: preserve the informational density of the uploaded materials and expand important points into study-ready explanations.
 - Add a mind map in the course overview and in every chapter overview. Use Mermaid mindmap, Markdown tree, or DOCX-friendly hierarchy boxes depending on the requested output format.
+- In ChatGPT, when a mind-map image is requested or clearly useful, first create a verified Mermaid / outline version, then use GPT 图像模型 2 or ChatGPT's built-in visual tool to produce an accurate, beautiful, readable mind-map image. The structured map remains the source of truth.
 - Choose an output structure that fits the discipline.
 - Make the output directly useful for studying, memorizing, analyzing, and solving questions.
 - Use clear sectioning, tables, worked examples, concept maps, mind maps, timelines, case templates, test cards, and scoring rubrics when useful.
 - For interactive test-card review, generate a clean CSV first, then create a standalone HTML interface with search, filters, flip cards, self-rating, weak-card review, progress tracking, and exportable study records.
-- For DOCX output, use polished academic handout formatting: blue headings, callout boxes, readable tables, headers, footers, page breaks, printable spacing, and readable mind-map blocks.
+- For DOCX output, use polished academic handout formatting: blue headings, callout boxes, readable tables, headers, footers, page breaks, printable spacing, and readable mind-map blocks or mind-map images when available.
 - For medical, legal, financial, or other high-stakes subjects, frame outputs as study support, not professional advice.
 - For Chinese users, produce exam-oriented Chinese explanations unless the user requests English.
 - For English users, produce polished English study notes unless the user requests Chinese.
